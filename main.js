@@ -1,4 +1,5 @@
 import './style.css'
+import './fonts.css'
 import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
 
@@ -9,16 +10,15 @@ module.exports = {
       "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
+      fontFamily: {
+        primary: "trickster" 
+      }, 
+      fontFamily: {
+        primary: "karrik" 
+      }, 
+
+
       extend: {
-
-        fontFamily: {
-          primary: "trickster" 
-        }, 
-
-        fontFamily: {
-          primary: "karrik" 
-        }, 
-
 
       },
     },
