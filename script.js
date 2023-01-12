@@ -193,7 +193,10 @@ function buttonsEnabler() {
   }
 
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Intervalle" est pressé
-  function decreaseInter() {
+  function Interval() {
+    if (autoclickOn == true) {
+      
+    }
     score -= bonusInterCost;
     bonusInter.disabled = true;
     bonusInterCost *= 3;
@@ -242,7 +245,7 @@ function buttonsEnabler() {
   multiply.addEventListener('click', increaseMultiplier);
   autoclick.addEventListener('click', enableAutoclick);
   bonus.addEventListener('click', enableBonus);
-  bonusInter.addEventListener('click',decreaseInter);
+  bonusInter.addEventListener('click',Interval);
   bonusPour.addEventListener('click', pourcentage);
   bonus3.addEventListener('click', Bonus3);
   
