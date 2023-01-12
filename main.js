@@ -9,8 +9,22 @@ module.exports = {
       "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-      extend: {},
+      extend: {
+
+        fontFamily: {
+          primary: "trickster" 
+        }, 
+
+        fontFamily: {
+          primary: "karrik" 
+        }, 
+
+
+      },
     },
     plugins: [],
   }
 
+
+
+ 
