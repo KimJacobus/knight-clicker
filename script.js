@@ -24,6 +24,7 @@ var score = 0;
 var clickValue = 1;
 var multiplier = 1;
 var bonusTime = 5;
+var inter = 1000;
 
 // Fonction pour mettre à jour l'affichage du score
 function displayScore() {
@@ -190,7 +191,37 @@ function buttonsEnabler() {
   }
   }
   }
-  
+
+  // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Intervalle" est pressé
+  function decreaseInter() {
+    score -= bonusInterCost;
+    bonusInter.disabled = true;
+    bonusInterCost *= 3;
+    displayScore();
+    buttonsEnabler();
+    displayBonusInter();
+    
+  }
+  // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Pourcentage" est pressé
+  function pourcentage() {
+    score -= bonusPourCost;
+    bonusPour.disabled = true;
+    bonusPourCost *= 3;
+    displayScore();
+    buttonsEnabler();
+    displayBonusPour(); 
+  }
+
+  // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Bonus3" est pressé
+  function Bonus3() {
+    score -= bonus3Cost;
+    bonus3.disabled = true;
+    bonus3Cost *= 3;
+    displayScore();
+    buttonsEnabler();
+    displayBonus3();
+  }
+
   // Mise à jour initiale de l'affichage et des boutons
   displayScore();
   displayMultiplier();
@@ -211,6 +242,9 @@ function buttonsEnabler() {
   multiply.addEventListener('click', increaseMultiplier);
   autoclick.addEventListener('click', enableAutoclick);
   bonus.addEventListener('click', enableBonus);
+  bonusInter.addEventListener('click',decreaseInter);
+  bonusPour.addEventListener('click', pourcentage);
+  bonus3.addEventListener('click', Bonus3);
   
   // Intervalles d'appel pour les fonctions autoclickF et bonusF
 var autoclickInterval = window.setInterval(autoclickF, 1000);
