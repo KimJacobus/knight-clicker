@@ -1,12 +1,12 @@
 // Récupération des éléments HTML pour les boutons et la zone d'affichage
-var display = document.getElementById('display');
-var click = document.getElementById('click');
-var multiply = document.getElementById('multiply');
-var autoclick = document.getElementById('autoclick');
-var bonus = document.getElementById('bonus');
-var bonusInter= document.getElementById('bonus1');
-var bonusPour = document.getElementById('bonus2');
-var bonus3 = document.getElementById('bonus3');
+var display = document.querySelector('#display');
+var click = document.querySelector('#click');
+var multiply = document.querySelector('#multiply');
+var autoclick = document.querySelector('#autoclick');
+var bonus = document.querySelector('#bonus');
+var bonusInter= document.querySelector('#bonus1');
+var bonusPour = document.querySelector('#bonus2');
+var bonus3 = document.querySelector('#bonus3');
 
 // Coûts pour les différentes actions
 var multiplierCost = 15;
@@ -33,34 +33,34 @@ function displayScore() {
 
 // Fonction pour mettre à jour l'affichage du multiplicateur
 function displayMultiplier() {
-  multiply.value = 'Multiplicateur x' + multiplier + ' (coût suivant : ' + multiplierCost + ')';
+  multiply.textContent = 'Multiplicateur x' + multiplier + ' (coût suivant : ' + multiplierCost + ')';
 }
 
 // Fonction pour mettre à jour l'affichage du bouton Autoclick
 function displayAutoclick() {
-  autoclick.value = 'Autoclick (coût : ' + autoclickCost + ')';
+  autoclick.textContent = 'Autoclick (coût : ' + autoclickCost + ')';
 }
 
 // Fonction pour mettre à jour l'affichage du bouton Bonus
 function displayBonus() {
-  bonus.value = 'Bonus (coût : ' + bonusCost + ')';
+  bonus.textContent = 'Bonus (coût : ' + bonusCost + ')';
 }
 
 // Fonction pour mettre à jour l'affichage du temps de bonus
 function displayBonusTime() {
-  bonus.value = 'Bonus (temps : ' + bonusTime + ' sec)';
+  bonus.textContent = 'Bonus (temps : ' + bonusTime + ' sec)';
 }
 // Fonction pour mettre à jour l'affichage du bonus inter
 function displayBonusInter() {
-  bonusInter.value = 'Reduire Intervalle (coût : '+ bonusInterCost +')';
+  bonusInter.textContent = 'Reduire Intervalle (coût : '+ bonusInterCost +')';
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonusPour() {
-  bonusPour.value = 'Augmente le pourcentage (coût : '+ bonusPourCost +')';
+  bonusPour.textContent = 'Augmente le pourcentage (coût : '+ bonusPourCost +')';
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonus3() {
-  bonus3.value = 'je sais pas encore (coût : '+ bonus3Cost +')';
+  bonus3.textContent = 'je sais pas encore (coût : '+ bonus3Cost +')';
 }
 
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score

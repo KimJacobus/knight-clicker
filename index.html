@@ -2,31 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/pictures/8bitKnight.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Knight Clicker</title>
   </head>
   <body>
-    <div class="grid grid-cols-3 grid-rows-1 gap-1 ">
-      <div class="grid row-span-1">Bonus
-        <input id="bonus" type="button" value="">
-        <input id="multiply" type="button" value="">
-        <input id="autoclick" type="button" value="">
+    <div class="grid grid-cols-5 h-screen gap-1 " style="background-image: url(/pictures/woodenbg.jpg);">
+      <div class="grid col-span-1">
+
+
+        <button id ="bonus" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
+          Bonus  
+
+          <div class="h-auto w-auto" style="background-image:url(icons/epee.png)"></div>
+
+        </button>
+
+          <button id ="multiply" value="multiply" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
+            Multiply
+          </button>
+
+          <button id ="autoclick" value="autoclick" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
+            Autoclick  
+          </button>
+
       </div>
-      <div class="grid row-span-3">display
-        <div id="display"></div>
-        <input id="click" type="button" value="click">
-        <!-- <button id="click" value="click">
-          <img class="sword" src="pictures/epée-removebg-preview.png" alt="">
-        </button> -->
+
+      <div class="grid grid-rows-5 col-span-3 bg-cover bg-center" style="background-image: url(/pictures/wallpaperflare.com_wallpaper.jpg)">
+        <div id="display" class="row-span-1 pt-10 justify-self-center"></div>
+        <div class="row-span-3 bg-no-repeat bg-center mt-16" style="background-image: url(/pictures/chateau.png);"></div>
+        <button id ="click" value="click" class="justify-self-center bg-contain bg-no-repeat bg-center p-10 mt-7 mb-7 hover:scale-125" style="background-image: url(/pictures/doubleepee.png);">
+        </button>
       </div>
-      <div class="right-side">
-        <input id="bonus1" type="button" value="">
-        <input id="bonus2" type="button" value="">
-        <input id="bonus3" type="button" value="">
+
+      
+      <div class="grid col-span-1">
+
+        
+        <button id="bonus1" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
+          Bonus1  
+        </button>
+        
+        <button id="bonus2" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
+          Bonus2  
+        </button>
+        
+        <button id="bonus3" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
+          Bonus 3
+          </button>
+
+
       </div>
-    <div class="grid row-span-1">Bonus
-    </div>
   </div>
   <script type="module" src="/main.js"></script>
   <script src="script.js"></script>
