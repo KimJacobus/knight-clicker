@@ -4,12 +4,17 @@ var click = document.getElementById('click');
 var multiply = document.getElementById('multiply');
 var autoclick = document.getElementById('autoclick');
 var bonus = document.getElementById('bonus');
+var bonusInter= document.getElementById('bonus1');
+var bonusPour = document.getElementById('bonus2');
+var bonus3 = document.getElementById('bonus3');
 
 // Coûts pour les différentes actions
 var multiplierCost = 15;
 var autoclickCost = 20;
-var bonusCost = 10;
-
+var bonusCost = 300;
+var bonusInterCost = 10;
+var bonusPourCost = 100;
+var bonus3Cost = 100;
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
 var autoclickOn = false;
 var bonusOn = false;
@@ -44,6 +49,18 @@ function displayBonus() {
 function displayBonusTime() {
   bonus.value = 'Bonus (temps : ' + bonusTime + ' sec)';
 }
+// Fonction pour mettre à jour l'affichage du bonus inter
+function displayBonusInter() {
+  bonusInter.value = 'Reduire Intervalle (coût : '+ bonusInterCost +')';
+}
+// Fonction pour mettre à jour l'affichage du bonus pourcentage
+function displayBonusPour() {
+  bonusPour.value = 'Augmente le pourcentage (coût : '+ bonusPourCost +')';
+}
+// Fonction pour mettre à jour l'affichage du bonus pourcentage
+function displayBonus3() {
+  bonus3.value = 'je sais pas encore (coût : '+ bonus3Cost +')';
+}
 
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
 function multiplyEnabler() {
@@ -51,6 +68,22 @@ function multiplyEnabler() {
     multiply.disabled = false;
   } else {
     multiply.disabled = true;
+  }
+}
+// Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
+function intrevalEnabler() {
+  if (score >= bonusInterCost) {
+    bonusInter.disabled = false;
+  } else {
+    bonusInter.disabled = true;
+  }
+}
+// Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
+function pourcentEnabler() {
+  if (score >= bonusPourCost) {
+    bonusPour.disabled = false;
+  } else {
+    bonusPour.disabled = true;
   }
 }
 
@@ -77,6 +110,7 @@ function buttonsEnabler() {
   multiplyEnabler();
   autoclickEnabler();
   bonusEnabler();
+  intrevalEnabler();
   }
   
   // Fonction pour augmenter le score lorsque le bouton "Click" est pressé
@@ -94,7 +128,7 @@ function buttonsEnabler() {
   if (bonusOn) {
   clickValue *= 2;
   }
-  multiplierCost *= 2;
+  multiplierCost *= 3;
   buttonsEnabler();
   displayScore();
   displayMultiplier();
@@ -150,9 +184,14 @@ function buttonsEnabler() {
   displayMultiplier();
   displayAutoclick();
   displayBonus();
+  displayBonusInter();
+  displayBonusPour();
+  displayBonus3();
   multiply.disabled = true;
   autoclick.disabled = true;
   bonus.disabled = true;
+  bonusInter.disabled = true;
+  bonusPour.disabled = true;
   
   // Ajout des écouteurs d'événements pour les boutons
   click.addEventListener('click', increaseScore);
