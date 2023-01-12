@@ -7,50 +7,66 @@
     <title>Knight Clicker</title>
   </head>
   <body>
-    <div class="grid grid-cols-5 h-screen gap-1 " style="background-image: url(/pictures/woodenbg.jpg);">
-      <div class="grid col-span-1">
+    <div class="grid grid-cols-5 h-screen w-screen">
+      <div class="grid col-span-1 grid-rows-6 bg-contain" style="background-image: url(/pictures/woodenbg.jpg);">
 
-
-        <button id ="bonus" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
-          Bonus  
-
-          <div class="h-auto w-auto" style="background-image:url(icons/epee.png)"></div>
-
+        <div class="row-span-1 grid-rows-2 justify-self-center self-end">
+          <div class="row-span-1">
+            <button id="bonus" value="bonus" class="bg-transparent hover:scale-125 shadow">
+              <img src="/pictures/tresor.png" alt="" srcset="">
+            </button>
+          </div>
+      </div>
+      <div class="row-span-1 justify-self-center">
+        <div id="pbonus" class="trickster text-2xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">
+        </div>
+        </div>
+      <div class="row-span-1 justify-self-center self-end">
+        <button id="multiply" value="multiply" class="bg-transparent hover:scale-125 shadow">
+          <img src="/pictures/potion.png" alt="" srcset="">
         </button>
-
-          <button id ="multiply" value="multiply" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
-            Multiply
+      </div>
+      <div class="row-span-1 justify-self-center">
+        <div id="pmultiply" class="trickster text-2xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">
+        </div>
+        </div>
+      <div class="row-span-1 justify-self-center self-end">
+        <button id="autoclick" value="autoclick"  class="bg-transparent hover:scale-125 shadow">
+          <img src="/pictures/hache.png" alt="" srcset="">
           </button>
-
-          <button id ="autoclick" value="autoclick" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
-            Autoclick  
-          </button>
+      </div>
+      <div class="row-span-1 justify-self-center">
+        <div id="pautoclick" class="trickster text-2xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">
+        </div>
+        </div>
 
       </div>
 
       <div class="grid grid-rows-5 col-span-3 bg-cover bg-center" style="background-image: url(/pictures/wallpaperflare.com_wallpaper.jpg)">
-        <div id="display" class="row-span-1 pt-10 justify-self-center"></div>
+        <div id="display" class="trickster text-4xl row-span-1 pt-10 justify-self-center"></div>
         <div class="row-span-3 bg-no-repeat bg-center mt-16" style="background-image: url(/pictures/chateau.png);"></div>
         <button id ="click" value="click" class="justify-self-center bg-contain bg-no-repeat bg-center p-10 mt-7 mb-7 hover:scale-125" style="background-image: url(/pictures/doubleepee.png);">
         </button>
       </div>
 
       
-      <div class="grid col-span-1">
+      <div class="grid col-span-1 grid-rows-3 bg-contain" style="background-image: url(/pictures/woodenbg.jpg);">
 
-        
-        <button id="bonus1" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
-          Bonus1  
-        </button>
-        
-        <button id="bonus2" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
+        <div class="row-span-1 justify-self-center self-center">
+          <button id="bonus1" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold border border-gray-400 rounded shadow">
+            Bonus1  
+          </button>
+      </div>
+      <div class="row-span-1 justify-self-center self-center">
+        <button id="bonus2" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold border border-gray-400 rounded shadow">
           Bonus2  
         </button>
-        
-        <button id="bonus3" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold m-24 border border-gray-400 rounded shadow">
+      </div>
+      <div class="row-span-1 justify-self-center self-center">
+        <button id="bonus3" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold border border-gray-400 rounded shadow">
           Bonus 3
           </button>
-
+      </div>
 
       </div>
   </div>
