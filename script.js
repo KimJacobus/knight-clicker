@@ -87,6 +87,15 @@ function pourcentEnabler() {
   }
 }
 
+// Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
+function bonus3Enabler() {
+  if (score >= bonus3Cost) {
+    bonus3.disabled = false;
+  } else {
+    bonus3.disabled = true;
+  }
+}
+
 // Fonction pour activer ou désactiver le bouton "Autoclick" en fonction du score et de l'état actuel
 function autoclickEnabler() {
   if (!autoclickOn && score >= autoclickCost) {
@@ -111,6 +120,8 @@ function buttonsEnabler() {
   autoclickEnabler();
   bonusEnabler();
   intrevalEnabler();
+  pourcentEnabler();
+  bonus3Enabler();
   }
   
   // Fonction pour augmenter le score lorsque le bouton "Click" est pressé
@@ -192,6 +203,7 @@ function buttonsEnabler() {
   bonus.disabled = true;
   bonusInter.disabled = true;
   bonusPour.disabled = true;
+  bonus3.disabled = true;
   
   // Ajout des écouteurs d'événements pour les boutons
   click.addEventListener('click', increaseScore);
