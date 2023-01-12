@@ -70,31 +70,6 @@ function multiplyEnabler() {
     multiply.disabled = true;
   }
 }
-// Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
-function intrevalEnabler() {
-  if (score >= bonusInterCost) {
-    bonusInter.disabled = false;
-  } else {
-    bonusInter.disabled = true;
-  }
-}
-// Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
-function pourcentEnabler() {
-  if (score >= bonusPourCost) {
-    bonusPour.disabled = false;
-  } else {
-    bonusPour.disabled = true;
-  }
-}
-
-// Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
-function bonus3Enabler() {
-  if (score >= bonus3Cost) {
-    bonus3.disabled = false;
-  } else {
-    bonus3.disabled = true;
-  }
-}
 
 // Fonction pour activer ou désactiver le bouton "Autoclick" en fonction du score et de l'état actuel
 function autoclickEnabler() {
@@ -111,6 +86,32 @@ function bonusEnabler() {
     bonus.disabled = false;
   } else {
     bonus.disabled = true;
+  }
+}
+
+// Fonction pour activer ou désactiver le bouton "Intervalle" en fonction du score
+function intrevalEnabler() {
+  if (score >= bonusInterCost) {
+    bonusInter.disabled = false;
+  } else {
+    bonusInter.disabled = true;
+  }
+}
+// Fonction pour activer ou désactiver le bouton "Pourcentage" en fonction du score
+function pourcentEnabler() {
+  if (score >= bonusPourCost) {
+    bonusPour.disabled = false;
+  } else {
+    bonusPour.disabled = true;
+  }
+}
+
+// Fonction pour activer ou désactiver le bouton "Bonus3" en fonction du score
+function bonus3Enabler() {
+  if (score >= bonus3Cost) {
+    bonus3.disabled = false;
+  } else {
+    bonus3.disabled = true;
   }
 }
 
