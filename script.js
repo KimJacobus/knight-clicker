@@ -229,7 +229,6 @@ function buttonsEnabler() {
     if(score >= bonusPourCost) {
       score += Math.ceil((score/100)*pourVal);
       pourVal *= 1.5;
-      console.log(pourVal)
 
     }
     // score -= bonusPourCost;
