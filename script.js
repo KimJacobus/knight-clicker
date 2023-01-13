@@ -9,22 +9,27 @@ var bonusPour = document.querySelector('#bonus2');
 var bonus3 = document.querySelector('#bonus3');
 
 // Coûts pour les différentes actions
-var multiplierCost = 15;
+var multiplierCost = 50;
 var autoclickCost = 20;
 var bonusCost = 300;
-var bonusInterCost = 10;
+var bonusInterCost = 100;
 var bonusPourCost = 100;
 var bonus3Cost = 100;
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
 var autoclickOn = false;
 var bonusOn = false;
 
+  // Intervalles d'appel pour les fonctions autoclickF et bonusF
+  var interTime = 1000;
+  var interTimeValid = 1000;
+  var autoclickInterval = window.setInterval(autoclickF,interTimeValid);
+  var bonusInterval = window.setInterval(bonusF, 1000);
+    
 // Variables pour le score, la valeur de chaque click, le multiplicateur et le temps de bonus
 var score = 0;
 var clickValue = 1;
 var multiplier = 1;
 var bonusTime = 5;
-var inter = 1000;
 
 // Fonction pour mettre à jour l'affichage du score
 function displayScore() {
@@ -92,7 +97,7 @@ function bonusEnabler() {
 
 // Fonction pour activer ou désactiver le bouton "Intervalle" en fonction du score
 function intrevalEnabler() {
-  if (score >= bonusInterCost) {
+  if (score >= bonusInterCost && interTime > 500) {
     bonusInter.disabled = false;
   } else {
     bonusInter.disabled = true;
@@ -191,20 +196,21 @@ function buttonsEnabler() {
   }
   }
   }
-
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Intervalle" est pressé
-  function Interval() {
-    if (autoclickOn == true) {
-      
+  function reducInterval() {
+    if (interTime > 500) {
+    clearInterval(autoclickInterval);
+    interTime -= 100;
+    autoclickInterval = window.setInterval(autoclickF, interTime);
     }
-    score -= bonusInterCost;
     bonusInter.disabled = true;
+    score -= bonusInterCost;
     bonusInterCost *= 3;
-    displayScore();
     buttonsEnabler();
-    displayBonusInter();
-    
+    displayScore();
+    displayBonusInter(); 
   }
+    
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Pourcentage" est pressé
   function pourcentage() {
     score -= bonusPourCost;
@@ -233,6 +239,7 @@ function buttonsEnabler() {
   displayBonusInter();
   displayBonusPour();
   displayBonus3();
+  buttonsEnabler();
   multiply.disabled = true;
   autoclick.disabled = true;
   bonus.disabled = true;
@@ -245,12 +252,7 @@ function buttonsEnabler() {
   multiply.addEventListener('click', increaseMultiplier);
   autoclick.addEventListener('click', enableAutoclick);
   bonus.addEventListener('click', enableBonus);
-  bonusInter.addEventListener('click',Interval);
+  bonusInter.addEventListener('click',reducInterval);
   bonusPour.addEventListener('click', pourcentage);
   bonus3.addEventListener('click', Bonus3);
   
-  // Intervalles d'appel pour les fonctions autoclickF et bonusF
-var autoclickInterval = window.setInterval(autoclickF, 1000);
-var bonusInterval = window.setInterval(bonusF, 1000);
-
-  // Bonus autoclick diminue le temps d'intervalle
