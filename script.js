@@ -14,7 +14,7 @@ var pAutoclick = document.querySelector('#pautoclick');
 // Coûts pour les différentes actions
 var multiplierCost = 50;
 var autoclickCost = 20;
-var bonusCost = 300;
+var bonusCost = 10;
 var bonusInterCost = 100;
 var bonusPourCost = 100;
 var bonus3Cost = 100;
@@ -32,7 +32,7 @@ var bonusOn = false;
 var score = 0;
 var clickValue = 1;
 var multiplier = 1;
-var bonusTime = 5;
+var bonusTime = 30;
 
 // Fonction pour mettre à jour l'affichage du score
 function displayScore() {
@@ -70,6 +70,10 @@ function displayBonusPour() {
 function displayBonus3() {
   bonus3.innerText = 'je sais pas encore (coût : '+ bonus3Cost +')';
 }
+//Fonction pour mettre a jour l'affichage du ClickValue
+function displayClickValue() {
+  click.innerText = '+ '+ clickValue + ' PO ';
+} 
 
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
 function multiplyEnabler() {
@@ -137,6 +141,7 @@ function buttonsEnabler() {
   // Fonction pour augmenter le score lorsque le bouton "Click" est pressé
   function increaseScore() {
   score += clickValue;
+  displayClickValue();
   buttonsEnabler();
   displayScore();
   }
@@ -251,11 +256,11 @@ function buttonsEnabler() {
   bonus3.disabled = true;
   
   // Ajout des écouteurs d'événements pour les boutons
-  click.addEventListener('click', increaseScore);
-  multiply.addEventListener('click', increaseMultiplier);
-  autoclick.addEventListener('click', enableAutoclick);
-  bonus.addEventListener('click', enableBonus);
-  bonusInter.addEventListener('click',reducInterval);
-  bonusPour.addEventListener('click', pourcentage);
-  bonus3.addEventListener('click', Bonus3);
+  click.addEventListener('mousedown', increaseScore);
+  multiply.addEventListener('mousedown', increaseMultiplier);
+  autoclick.addEventListener('mousedown', enableAutoclick);
+  bonus.addEventListener('mousedown', enableBonus);
+  bonusInter.addEventListener('mousedown',reducInterval);
+  bonusPour.addEventListener('mousedown', pourcentage);
+  bonus3.addEventListener('mousedown', Bonus3);
   
