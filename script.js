@@ -10,6 +10,7 @@ var bonus3 = document.querySelector('#bonus3');
 var pBonus = document.querySelector('#pbonus');
 var pMultiply = document.querySelector('#pmultiply');
 var pAutoclick = document.querySelector('#pautoclick');
+var pClick = document.querySelector('#pclick')
 
 // Coûts pour les différentes actions
 var multiplierCost = 50;
@@ -72,7 +73,7 @@ function displayBonus3() {
 }
 //Fonction pour mettre a jour l'affichage du ClickValue
 function displayClickValue() {
-  click.innerText = '+ '+ clickValue + ' PO ';
+  pClick.innerText = '+ '+ clickValue + ' PO ';
 } 
 
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
