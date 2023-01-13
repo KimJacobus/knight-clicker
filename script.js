@@ -35,7 +35,8 @@ var clickValue = 1;
 var multiplier = 1;
 var bonusTime = 30;
 
-var pourcentageVal = 50;
+var pourVal = 10;
+
 
 
 // Fonction pour mettre à jour l'affichage du score
@@ -225,11 +226,13 @@ function buttonsEnabler() {
     
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Pourcentage" est pressé
   function pourcentage() {
-    let pourcentageVal = 1;
     if(score >= bonusPourCost) {
-      clickValue = Math.floor(clickValue*2 + (clickValue/100)*pourcentageVal);
+      score += Math.ceil((score/100)*pourVal);
+      pourVal *= 1.5;
+      console.log(pourVal)
+
     }
-    score -= bonusPourCost;
+    // score -= bonusPourCost;
     bonusPour.disabled = true;
     bonusPourCost *= 3;
     displayScore();
