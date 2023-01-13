@@ -14,10 +14,8 @@ var pAutoclick = document.querySelector('#pautoclick');
 // Coûts pour les différentes actions
 var multiplierCost = 50;
 var autoclickCost = 20;
-
 var bonusCost = 300;
 var bonusInterCost = 100;
-
 var bonusPourCost = 100;
 var bonus3Cost = 100;
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
@@ -210,7 +208,7 @@ function buttonsEnabler() {
     }
     bonusInter.disabled = true;
     score -= bonusInterCost;
-    bonusInterCost *= 3;
+    bonusInterCost *= 5;
     buttonsEnabler();
     displayScore();
     displayBonusInter(); 
