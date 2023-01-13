@@ -8,6 +8,10 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
+        fade: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },
           '10%': { transform: 'rotate(14deg)' },
@@ -21,7 +25,10 @@ module.exports = {
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
-      }
+      },
+      animation: {
+        'fading': 'fade 4s forwards',
+      },
     },
   },
   plugins: [],
