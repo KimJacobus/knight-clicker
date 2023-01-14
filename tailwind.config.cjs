@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
+  
   content: [
     './components/**/*.{html,js}',
     './pages/**/*.{html,js}',
@@ -9,14 +10,16 @@ module.exports = {
 
   theme: {
     extend: {
-<<<<<<< HEAD
 
       animation: { 
-        bounce: 'bounce 1s infinite', 
+        'skull': 'skull 1s infinite', 
+
+        'waving-hand': 'wave 2s linear infinite',
+        'fading': 'fade 4s forwards',
       },
 
       keyframes: {
-      bounce: {
+      skull: {
         '0%, 100%' : { transform: 'translateY(100%)', opacity: '0%' },
         '25%' : {opacity : '75%'},
         '50%': { transform: 'translateY(0%)', opacity: '100%' },
@@ -24,7 +27,6 @@ module.exports = {
 
         },
       },
-=======
       keyframes: {
         fade: {
           '0%': { opacity: '1' },
@@ -41,11 +43,7 @@ module.exports = {
           '100%': { transform: 'rotate(0.0deg)' },
         },
       },
-      animation: {
-        'waving-hand': 'wave 2s linear infinite',
-        'fading': 'fade 4s forwards',
-      },
->>>>>>> kdev_2
+     
     },
   },
   plugins: [],
