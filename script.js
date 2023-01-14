@@ -10,7 +10,8 @@ var bonus3 = document.querySelector('#bonus3');
 var pBonus = document.querySelector('#pbonus');
 var pMultiply = document.querySelector('#pmultiply');
 var pAutoclick = document.querySelector('#pautoclick');
-var pClick = document.querySelector('#pclick')
+var pClick = document.querySelector('#pclick');
+var pBonus3 = document.querySelector('#pbonus3');
 
 // Coûts pour les différentes actions
 var multiplierCost = 50;
@@ -18,7 +19,7 @@ var autoclickCost = 20;
 var bonusCost = 10;
 var bonusInterCost = 100;
 var bonusPourCost = 100;
-var bonus3Cost = 100;
+var bonus3Cost = 10;
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
 var autoclickOn = false;
 var bonusOn = false;
@@ -37,7 +38,7 @@ var bonusTime = 30;
 
 // Fonction pour mettre à jour l'affichage du score
 function displayScore() {
-  display.innerText = score;
+  display.innerText = Math.round(score);
 }
 
 // Fonction pour mettre à jour l'affichage du multiplicateur
@@ -57,7 +58,7 @@ function displayBonus() {
 
 // Fonction pour mettre à jour l'affichage du temps de bonus
 function displayBonusTime() {
-  pBonus.innerText = 'Bonus (temps : ' + bonusTime + ' sec)';
+  pBonus.innerText = 'Durée : ' + bonusTime + ' s';
 }
 // Fonction pour mettre à jour l'affichage du bonus inter
 function displayBonusInter() {
@@ -69,7 +70,7 @@ function displayBonusPour() {
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonus3() {
-  bonus3.innerText = 'je sais pas encore (coût : '+ bonus3Cost +')';
+  pBonus3.innerText = '? (coût : '+ bonus3Cost +')';
 }
 //Fonction pour mettre a jour l'affichage du ClickValue
 function displayClickValue() {
@@ -232,9 +233,15 @@ function buttonsEnabler() {
 
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Bonus3" est pressé
   function Bonus3() {
+    let bonusMalus = (Math.floor(Math.random() * 10));
+    if(bonusMalus >= 5) {
+      score *= 5
+    } else if(bonusMalus < 5) {
+      score *= 0.5
+    }
     score -= bonus3Cost;
     bonus3.disabled = true;
-    bonus3Cost *= 3;
+    bonus3Cost *= 1;
     displayScore();
     buttonsEnabler();
     displayBonus3();
@@ -265,3 +272,17 @@ function buttonsEnabler() {
   bonusPour.addEventListener('mousedown', pourcentage);
   bonus3.addEventListener('mousedown', Bonus3);
   
+// fonction random
+function randomBonus() {
+  let bonusMalus = (Math.floor(Math.random() * 10));
+  if(bonusMalus >= 5) {
+    score += 500
+  } else if(bonusMalus < 5) {
+    score = 0
+  }
+}
+
+
+
+
+
