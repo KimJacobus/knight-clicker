@@ -74,7 +74,7 @@ function displayBonus3() {
 }
 //Fonction pour mettre a jour l'affichage du ClickValue
 function displayClickValue() {
-  pClick.innerText = '+ '+ clickValue + ' PO ';
+  pClick.innerText = '+ '+ clickValue + ' PO/s ';
 } 
 
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
@@ -151,7 +151,7 @@ function buttonsEnabler() {
   // Fonction pour augmenter le multiplicateur lorsque le bouton "Multiplier" est pressé
   function increaseMultiplier() {
   score -= multiplierCost;
-  multiplier += 1;
+  multiplier *= 2;
   clickValue = multiplier;
   if (bonusOn) {
   clickValue *= 2;
