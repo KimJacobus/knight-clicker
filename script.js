@@ -32,7 +32,7 @@ var bonusOn = false;
     
 // Variables pour le score, la valeur de chaque click, le multiplicateur et le temps de bonus
 var score = 0;
-var clickValue = 100;
+var clickValue = 1;
 var multiplier = 1;
 var bonusTime = 30;
 
