@@ -10,16 +10,7 @@ module.exports = {
 
   theme: {
     extend: {
-
-      animation: { 
-        'skull': 'skull 2s', 
-        'waving-hand': 'wave 2s linear infinite',
-        'fading': 'fade 4s forwards',
-        'sliding': 'slide 4s linear infinite',
-
-      },
-
-      keyframes: {
+     keyframes: {
       skull: {
         '0%' : { transform: 'translateY(500%)', opacity: '0%' },
         '50%': { opacity: '100%' },
@@ -42,14 +33,39 @@ module.exports = {
           '100%': { transform: 'rotate(0.0deg)' },
         },
         slide: {
-          '0%': { left:'0px'},
-          '50%': {left:'100px'},
-          '100%': {left:'0px'},
-        }
+          '0%': { transform: 'translateX(0%)'},
+          '50%': {transform: 'translateX(-12vh)'},
+          '100%': {transform: 'translateX(0%)'},
+        },
+        slide2: {
+          '0%': { transform: 'translateX(0%)'},
+          '50%': {transform: 'translateX(12vh)'},
+          '100%': {transform: 'translateX(0%)'},
+        },
+        slide3: {
+          '0%': { transform: 'translateX(0%)'},
+          '50%': {transform: 'translateX(-30vh)'},
+          '100%': {transform: 'translateX(0%)'},
+        },
+        slide4: {
+          '0%': { transform: 'translateX(0%)'},
+          '50%': {transform: 'translateX(30vh)'},
+          '100%': {transform: 'translateX(0%)'},
+        },
+      },
 
+      animation: {
+        'waving-hand': 'wave 2s linear infinite',
+        'fading': 'fade 4s forwards',
+        'sliding': 'slide 4s linear infinite',
+        'skull': 'skull 2s',
+        'sliding2': 'slide2 4s linear infinite',
+        'sliding3': 'slide3 4s linear infinite',
+        'sliding4': 'slide4 4s linear infinite',
       },
 
     },
   },
   plugins: [],
 }
+

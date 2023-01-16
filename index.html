@@ -21,7 +21,7 @@
       <div class="lg:order-1 grid col-span-1 lg:grid-rows-3 grid-rows-3 bg-contain" style="background-image: url(/pictures/woodenbg.jpg);">
         <div class="row-span-1 grid-rows-2 justify-self-center self-center text-center">
           <div class="row-span-1">
-            <button id="bonus" value="bonus" class="bg-transparent hover:animate-waving-hand shadow">
+            <button id="bonus" value="bonus" class="bg-transparent hover:animate-waving-hand shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Doubler le revenu sur la durée">
               <img src="/pictures/tresor.png" alt="" srcset="">
             </button>
             <div id="pbonus" class="trickster text-xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">
@@ -29,14 +29,14 @@
           </div>
         </div>
         <div class="row-span-1 justify-self-center self-center text-center">
-          <button id="multiply" value="multiply" class="bg-transparent hover:animate-ping shadow">
+          <button id="multiply" value="multiply" class="bg-transparent hover:animate-ping shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Multiplier le revenu">
             <img src="/pictures/etoiles.png" alt="" srcset="">
           </button>
           <div id="pmultiply" class="trickster text-xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">
           </div>
         </div>
         <div class="row-span-1 justify-self-center self-center text-center">
-          <button id="autoclick" value="autoclick"  class="bg-transparent hover:scale-125 hover:animate-bounce shadow">
+          <button id="autoclick" value="autoclick"  class="bg-transparent hover:animate-bounce shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Activer l'auto-clic">
             <img src="/pictures/hache.png" alt="" srcset="">
           </button>
           <div id="pautoclick" class="trickster text-xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">
@@ -52,9 +52,9 @@
 
       <!-- Ecran centrale -->
 
-
       <div class="order-last lg:order-2 grid lg:grid-rows-7 lg:col-span-3 grid-rows-2 col-span-2 bg-cover bg-center" style="background-image: url(/pictures/wallpaperflare.com_wallpaper2.jpg)">
-        
+        <div id="display" class="trickster text-4xl row-span-1 justify-self-center">
+        </div>
                 <!-- cranes -->
         <div id="crane ">
 
@@ -64,26 +64,24 @@
           
           <img id="skullThree" class="hidden absolute lg:left-[48rem] lg:top-[10rem] left-[20rem] object-scale-down h-10 w-10 animate-skull"  src="/icons/skull.png" alt="" srcset="">
         
-        <img id="skullFour" class="hidden absolute lg:left-[80rem] lg:top-[1rem] sm:left-[2rem] left-[10rem] object-scale-down h-10 w-10 animate-skull"  src="/icons/skull.png" alt="" srcset="">
+          <img id="skullFour" class="hidden absolute lg:left-[80rem] lg:top-[1rem] sm:left-[2rem] left-[10rem] object-scale-down h-10 w-10 animate-skull"  src="/icons/skull.png" alt="" srcset="">
   
-        <img id="skullFive" class="hidden absolute lg:left-[55rem] lg:top-[10rem] sm:left-[50rem] sm:bottom-[50rem] left-[0rem] bottom-[50rem] object-scale-down h-10 w-10 animate-skull"  src="/icons/skull.png" alt="" srcset="">
-       </div>
+          <img id="skullFive" class="hidden absolute lg:left-[55rem] lg:top-[10rem] sm:left-[50rem] sm:bottom-[50rem] left-[0rem] bottom-[50rem] object-scale-down h-10 w-10 animate-skull"  src="/icons/skull.png" alt="" srcset="">
+        </div>
         
 
-        <div id="display" class="trickster text-4xl row-span-1 justify-self-center px-14">
-        </div>
         <div id="pclick" class="trickster justify-self-end animate-pulse">
         </div>
         <div class="lg:row-span-3 row-span-1 justify-self-center">
           <div class="grid grid-cols-3 h-54 md:mb-28">
             <div class="row-span-1 self-end justify-self-center z-20">
-              <img class="object-scale-down h-10 w-10  md:h-20 md:w-20 " src="/pictures/8bitKnight.png" alt="" srcset="">
+              <img id="knight" class="object-scale-down h-10 w-10  md:h-20 md:w-20 animate-none lg:animate-none animate-sliding2 lg:animate-sliding4" src="/pictures/8bitKnight.png" alt="" srcset="">
             </div>
             <div class="row-span-1 self-center justify-self-center w-max md:w-full md:h-full z-0">
               <img class="object-scale-down h-84 w-80  md:h-max md:w-max " src="/pictures/chateau.png" alt="" srcset="">
             </div>
             <div class="row-span-1 self-end justify-self-center z-20">
-              <img class="object-scale-down h-14 w-14  md:h-20 md:w-20 animate-bounce" src="/pictures/8BitOrc.png" alt="" srcset="">
+              <img id="orc" class="object-scale-down h-14 w-14  md:h-20 md:w-20 animate-none lg:animate-none animate-sliding lg:animate-sliding3" src="/pictures/8BitOrc.png" alt="" srcset="">
             </div>
           </div>
         </div>
@@ -93,7 +91,6 @@
           </button>
         </div>
 
-
         <div class="trickster text-white text-lg grid grid-cols-5 justify-between bg-contain" style="background-image: url(/pictures/woodenbg.jpg);">
           <div id="pointtotal" class="">Total PO</div>
           <div id="POdepense" class="">Dépense</div>
@@ -101,6 +98,7 @@
           <div class=""></div>
           <div class=""></div>
         </div>
+
       </div>
       
       
@@ -111,17 +109,21 @@
       <!-- Bonus droite -->
       <div class="lg:order-3 grid col-span-1 lg:grid-rows-3 grid-rows-3 bg-contain" style="background-image: url(/pictures/woodenbg.jpg);">
         <div class="row-span-1 justify-self-center self-center text-center">
-          <button id="bonus1" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold border border-gray-400 rounded shadow">
-            Bonus1  
+          <button id="bonus1" value="bonus" class="bg-transparent hover:scale-125 hover:animate-pulse shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Diminuer l'interval de temps">
+            <img src="/pictures/cle2.png" alt="" srcset="">  
           </button>
+          <div id="pbonus1" class="trickster text-xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">
+          </div>
         </div>
         <div class="row-span-1 justify-self-center self-center text-center">
-          <button id="bonus2" value="bonus" class="bg-amber-600 hover:bg-gray-100 text-gray-800 font-semibold border border-gray-400 rounded shadow">
-            Bonus2  
+          <button id="bonus2" value="bonus" class="bg-transparent hover:scale-125 hover:animate-pulse shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Revenu instantané">
+            <img src="/pictures/item.png" alt="" srcset=""> 
           </button>
+          <div id="pbonus2" class="trickster text-xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">
+          </div>
         </div>
         <div class="row-span-1 justify-self-center self-center text-center">
-          <button id="bonus3" value="bonus" class="bg-transparent hover:scale-125 hover:animate-pulse shadow">
+          <button id="bonus3" value="bonus" class="bg-transparent hover:scale-125 hover:animate-pulse shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Qui sait ce que contient la potion ?">
             <img src="/pictures/potion.png" alt="" srcset="">
           </button>
           <div id="pbonus3" class="trickster text-xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">

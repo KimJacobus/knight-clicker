@@ -12,6 +12,8 @@ var pMultiply = document.querySelector('#pmultiply');
 var pAutoclick = document.querySelector('#pautoclick');
 var pClick = document.querySelector('#pclick');
 var pBonus3 = document.querySelector('#pbonus3');
+var pBonus2 = document.querySelector('#pbonus2');
+var pBonus1 = document.querySelector('#pbonus1');
 
 // Coûts pour les différentes actions
 var multiplierCost = 50;
@@ -66,11 +68,11 @@ function displayBonusTime() {
 }
 // Fonction pour mettre à jour l'affichage du bonus inter
 function displayBonusInter() {
-  bonusInter.innerText = 'Reduire Intervalle (coût : '+ bonusInterCost +')';
+  pBonus1.innerText = '(coût : '+ bonusInterCost +')';
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonusPour() {
-  bonusPour.innerText = `+${Math.floor(pourVal)}% (coût : ${bonusPourCost})`;
+  pBonus2.innerText = `+${Math.floor(pourVal)}% (coût : ${bonusPourCost})`;
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonus3() {
@@ -85,8 +87,12 @@ function displayClickValue() {
 function multiplyEnabler() {
   if (score >= multiplierCost) {
     multiply.disabled = false;
+    multiply.classList.remove("cursor-not-allowed","opacity-50");
+    multiply.classList.add("hover:animate-ping");
   } else {
     multiply.disabled = true;
+    multiply.classList.add("cursor-not-allowed","opacity-50");
+    multiply.classList.remove("hover:animate-ping");
   }
 }
 
@@ -94,8 +100,12 @@ function multiplyEnabler() {
 function autoclickEnabler() {
   if (!autoclickOn && score >= autoclickCost) {
     autoclick.disabled = false;
+    autoclick.classList.remove("cursor-not-allowed","opacity-50");
+    autoclick.classList.add("hover:animate-bounce");
   } else {
     autoclick.disabled = true;
+    autoclick.classList.add("cursor-not-allowed","opacity-50");
+    autoclick.classList.remove("hover:animate-bounce");
   }
 }
 
@@ -103,8 +113,12 @@ function autoclickEnabler() {
 function bonusEnabler() {
   if (!bonusOn && score >= bonusCost) {
     bonus.disabled = false;
+    bonus.classList.remove("cursor-not-allowed","opacity-50");
+    bonus.classList.add("hover:animate-waving-hand");
   } else {
     bonus.disabled = true;
+    bonus.classList.add("cursor-not-allowed","opacity-50");
+    bonus.classList.remove("hover:animate-waving-hand");
   }
 }
 
@@ -112,16 +126,28 @@ function bonusEnabler() {
 function intrevalEnabler() {
   if (score >= bonusInterCost && interTime > 500) {
     bonusInter.disabled = false;
+    bonusInter.classList.remove("cursor-not-allowed","opacity-50");
+    bonusInter.classList.add("hover:animate-pulse");
+    bonusInter.classList.add("hover:scale-125");
   } else {
     bonusInter.disabled = true;
+    bonusInter.classList.add("cursor-not-allowed","opacity-50");
+    bonusInter.classList.remove("hover:animate-pulse");
+    bonusInter.classList.remove("hover:scale-125");
   }
 }
 // Fonction pour activer ou désactiver le bouton "Pourcentage" en fonction du score
 function pourcentEnabler() {
   if (score >= bonusPourCost) {
     bonusPour.disabled = false;
+    bonusPour.classList.remove("cursor-not-allowed","opacity-50");
+    bonusPour.classList.add("hover:animate-pulse");
+    bonusPour.classList.add("hover:scale-125");
   } else {
     bonusPour.disabled = true;
+    bonusPour.classList.add("cursor-not-allowed","opacity-50");
+    bonusPour.classList.remove("hover:animate-pulse");
+    bonusPour.classList.remove("hover:scale-125");
   }
 }
 
@@ -129,8 +155,14 @@ function pourcentEnabler() {
 function bonus3Enabler() {
   if (score >= bonus3Cost) {
     bonus3.disabled = false;
+    bonus3.classList.remove("cursor-not-allowed","opacity-50");
+    bonus3.classList.add("hover:animate-pulse");
+    bonus3.classList.add("hover:scale-125");
   } else {
     bonus3.disabled = true;
+    bonus3.classList.add("cursor-not-allowed","opacity-50");
+    bonus3.classList.remove("hover:animate-pulse");
+    bonus3.classList.remove("hover:scale-125");
   }
 }
 
@@ -234,7 +266,7 @@ function buttonsEnabler() {
     else if(score >= bonusPourCost) {
       score += Math.ceil((score/100)*pourVal)
     }
-    // score -= bonusPourCost;
+    // score -= bonusPourCost
     bonusPour.disabled = true;
     bonusPourCost *= 3;
     displayScore();
