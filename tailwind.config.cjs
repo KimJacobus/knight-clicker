@@ -1,13 +1,30 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
+  
   content: [
     './components/**/*.{html,js}',
     './pages/**/*.{html,js}',
     './index.html',
   ],
+
   theme: {
     extend: {
+
+      animation: { 
+        'skull': 'skull 2s', 
+        'waving-hand': 'wave 2s linear infinite',
+        'fading': 'fade 4s forwards',
+      },
+
       keyframes: {
+      skull: {
+        '0%' : { transform: 'translateY(500%)', opacity: '0%' },
+        '50%': { opacity: '100%' },
+        '100%': { transform: 'translateY(0%)', opacity : '0%'},
+
+        },
+      
         fade: {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
@@ -28,11 +45,13 @@ module.exports = {
           '100%': {left:'0px'},
         }
       },
+
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'fading': 'fade 4s forwards',
         'sliding': 'slide 4s linear infinite',
       },
+
     },
   },
   plugins: [],
