@@ -43,7 +43,7 @@ var pourVal = 10;
 
 // Fonction pour mettre à jour l'affichage du score
 function displayScore() {
-  display.innerText = Number(localStorage.score)+1;
+  display.innerText = Math.round(score);
 }
 
 // Fonction pour mettre à jour l'affichage du multiplicateur
