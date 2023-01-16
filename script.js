@@ -362,8 +362,8 @@ var skullTwo = document.getElementById('skullTwo');
 var skullThree = document.getElementById('skullThree'); 
 var skullFour = document.getElementById('skullFour'); 
 var skullFive = document.getElementById('skullFive'); 
-var knight = document.querySelector('#knight');
-var orc = document.querySelector('#orc')
+var knight = document.getElementById('knight');
+var orc = document.getElementById('orc')
 
 var click = document.querySelector('#click');
 
