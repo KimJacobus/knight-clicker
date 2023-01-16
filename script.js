@@ -52,6 +52,7 @@ function resetScore () {
   pourVal = 10;
   multiplierCost = 50
   bonusTime = 30;
+  
   displayScore();
   displayMultiplier();
   displayAutoclick();
