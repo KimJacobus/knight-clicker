@@ -45,15 +45,11 @@ module.exports = {
           '100%': {left:'0px'},
         }
       },
-<<<<<<< HEAD
-     
-=======
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'fading': 'fade 4s forwards',
         'sliding': 'slide 4s linear infinite',
       },
->>>>>>> db11177108f63b509b669a03926c921abd194e29
     },
   },
   plugins: [],
