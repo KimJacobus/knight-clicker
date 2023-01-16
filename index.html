@@ -49,7 +49,7 @@
 
       <!-- Ecran centrale -->
 
-      <div class="order-last lg:order-2 grid lg:grid-rows-7 lg:col-span-3 grid-rows-2 col-span-2 bg-cover bg-center" style="background-image: url(/pictures/wallpaperflare.com_wallpaper2.jpg)">
+      <div class="order-last lg:order-2 grid lg:grid-rows-7 lg:col-span-3 grid-rows-2 col-span-2 bg-cover bg-center" style="background-image: url(/pictures/wallpaperflare.com_wallpaper3.jpg)">
         <div id="display" class="trickster text-4xl row-span-1 justify-self-center">
         </div>
         <!-- cranes -->
@@ -65,16 +65,16 @@
   
           <img id="skullFive" class="hidden absolute lg:left-[55rem] lg:top-[10rem] sm:left-[50rem] sm:bottom-[50rem] left-[0rem] bottom-[50rem] object-scale-down h-10 w-10 animate-skull"  src="/icons/skull.png" alt="" srcset="">
         </div>
-        <div class="lg:row-span-3 row-span-1 justify-self-center">
-          <div class="grid grid-cols-3 h-54 md:mb-28">
+        <div class="lg:row-span-3 row-span-1">
+          <div class="grid grid-cols-3">
             <div class="row-span-1 self-end justify-self-center z-20">
-              <img id="knight" class="object-scale-down h-10 w-10  md:h-20 md:w-20 " src="/pictures/8bitKnight.png" alt="" srcset="">
+              <img id="knight" class="object-scale-down h-10 w-10  md:h-20 md:w-20" src="/pictures/8bitKnight.png" alt="" srcset="">
             </div>
             <div class="row-span-1 self-center justify-self-center w-max md:w-full md:h-full z-0">
-              <img class="object-scale-down h-84 w-80  md:h-max md:w-max " src="/pictures/chateau.png" alt="" srcset="">
+              <!-- <img class="object-scale-down h-84 w-80  md:h-max md:w-max " src="/pictures/chateau.png" alt="" srcset=""> -->
             </div>
             <div class="row-span-1 self-end justify-self-center z-20">
-              <img id="orc" class="object-scale-down h-14 w-14  md:h-20 md:w-20" src="/pictures/8BitOrc.png" alt="" srcset="">
+              <img id="orc" class="object-scale-down h-14 w-14  md:h-20 md:w-20 animate-bounce" src="/pictures/8BitOrc.png" alt="" srcset="">
             </div>
           </div>
         </div>
@@ -84,12 +84,16 @@
           </button>
         </div>
 
-        <div class="trickster text-white text-lg grid grid-cols-5 justify-between bg-contain" style="background-image: url(/pictures/woodenbg.jpg);">
+        <div class="trickster text-white text-lg grid grid-cols-5 justify-evenly bg-contain" style="background-image: url(/pictures/woodenbg.jpg);">
           <div id="pointtotal" class="">Total PO</div>
           <div id="POdepense" class="">Dépense</div>
-          <div id="multiplicateur" class="">multiplicateur</div>
-          <div class=""></div>
+          <div id="multiplicateur" class="">multiplicateur</div>          
           <div id="pclick" class=""></div>
+          <div id="reset" class="">
+            <button id="resetbutton" value="click"  class="">
+              <img class="" src="/pictures/reset.png" alt="" srcset="">
+            </button>
+          </div>
         </div>
 
       </div>
@@ -121,6 +125,5 @@
     </div>
   <script type="module" src="/main.js"></script>
   <script type="module" src="/script.js"></script>
-  <script type="module" src="/animation.js"></script>
   </body>
 </html>
