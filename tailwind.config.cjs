@@ -15,6 +15,8 @@ module.exports = {
         'skull': 'skull 2s', 
         'waving-hand': 'wave 2s linear infinite',
         'fading': 'fade 4s forwards',
+        'sliding': 'slide 4s linear infinite',
+
       },
 
       keyframes: {
@@ -44,12 +46,7 @@ module.exports = {
           '50%': {left:'100px'},
           '100%': {left:'0px'},
         }
-      },
 
-      animation: {
-        'waving-hand': 'wave 2s linear infinite',
-        'fading': 'fade 4s forwards',
-        'sliding': 'slide 4s linear infinite',
       },
 
     },
