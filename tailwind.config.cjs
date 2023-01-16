@@ -39,8 +39,21 @@ module.exports = {
           '60%': { transform: 'rotate(0.0deg)' },
           '100%': { transform: 'rotate(0.0deg)' },
         },
+        slide: {
+          '0%': { left:'0px'},
+          '50%': {left:'100px'},
+          '100%': {left:'0px'},
+        }
       },
+<<<<<<< HEAD
      
+=======
+      animation: {
+        'waving-hand': 'wave 2s linear infinite',
+        'fading': 'fade 4s forwards',
+        'sliding': 'slide 4s linear infinite',
+      },
+>>>>>>> db11177108f63b509b669a03926c921abd194e29
     },
   },
   plugins: [],
