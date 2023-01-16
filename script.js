@@ -35,14 +35,13 @@ var score = 0;
 var clickValue = 1;
 var multiplier = 1;
 var bonusTime = 30;
-
 var pourVal = 10;
 
 
 
 // Fonction pour mettre à jour l'affichage du score
 function displayScore() {
-  display.innerText = Math.round(score);
+  display.innerText = Number(localStorage.score)+1;
 }
 
 // Fonction pour mettre à jour l'affichage du multiplicateur
@@ -80,6 +79,15 @@ function displayBonus3() {
 function displayClickValue() {
   pClick.innerText = '+ '+ clickValue + ' PO/s ';
 } 
+//Fonction pour mettre a jour l'affichage du total
+function displayTotal() {
+if (localStorage.score) {
+  localStorage.score = Number(localStorage.score)+1;
+} else {
+  localStorage.score = score;
+}
+  document.getElementById("pointtotal").innerText = ('Total PO ' +localStorage.score);
+}
 
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
 function multiplyEnabler() {
@@ -87,7 +95,7 @@ function multiplyEnabler() {
     multiply.disabled = false;
   } else {
     multiply.disabled = true;
-  }
+  };
 }
 
 // Fonction pour activer ou désactiver le bouton "Autoclick" en fonction du score et de l'état actuel
@@ -150,6 +158,7 @@ function buttonsEnabler() {
   displayClickValue();
   buttonsEnabler();
   displayScore();
+  displayTotal();
   }
   
   // Fonction pour augmenter le multiplicateur lorsque le bouton "Multiplier" est pressé
@@ -267,6 +276,8 @@ function buttonsEnabler() {
   displayBonusPour();
   displayBonus3();
   buttonsEnabler();
+  displayTotal();
+
   multiply.disabled = true;
   autoclick.disabled = true;
   bonus.disabled = true;
