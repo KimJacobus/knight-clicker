@@ -24,6 +24,7 @@ var bonusCost = 10;
 var bonusInterCost = 100;
 var bonusPourCost = 100;
 var bonus3Cost = 10;
+var depense = 0;
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
 var autoclickOn = false;
 var bonusOn = false;
@@ -98,14 +99,8 @@ if (localStorage.score) {
 }
 //Fonction pour mettre a jour l'affichage des depense
 function displayDepense() {
-  
+  dep.innerText = 'Depense -' + depense
 }
-// Fonction pour caluler les depenses
-function poDepense() {
-score 
-  
-}
-
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
 function multiplyEnabler() {
   if (score >= multiplierCost) {
@@ -211,6 +206,7 @@ function buttonsEnabler() {
   // Fonction pour augmenter le multiplicateur lorsque le bouton "Multiplier" est pressé
   function increaseMultiplier() {
   score -= multiplierCost;
+  depense += multiplierCost;
   multiplier *= 2;
   clickValue = multiplier;
   if (bonusOn) {
@@ -221,14 +217,17 @@ function buttonsEnabler() {
   buttonsEnabler();
   displayScore();
   displayMultiplier();
+  displayDepense();
   }
   
   // Fonction pour activer la fonctionnalité Autoclick lorsque le bouton "Autoclick" est pressé
   function enableAutoclick() {
   score -= autoclickCost;
+  depense += autoclickCost;
   autoclickOn = true;
   autoclick.disabled = true;
   displayScore();
+  displayDepense();
   }
   
   // Fonction appelée toutes les secondes pour augmenter le score si la fonctionnalité Autoclick est activée
@@ -241,11 +240,13 @@ function buttonsEnabler() {
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Bonus" est pressé
   function enableBonus() {
   score -= bonusCost;
+  depense += bonusCost;
   bonusOn = true;
   clickValue *= 2;
   bonus.disabled = true;
   displayScore();
   displayBonusTime();
+  displayDepense();
   }
   
   // Fonction pour désactiver la fonctionnalité Bonus lorsque le temps de bonus est écoulé
@@ -276,10 +277,12 @@ function buttonsEnabler() {
     }
     bonusInter.disabled = true;
     score -= bonusInterCost;
+    depense += bonusInterCost;
     bonusInterCost *= 5;
     buttonsEnabler();
     displayScore();
     displayBonusInter(); 
+    displayDepense();
   }
     
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Pourcentage" est pressé
@@ -291,12 +294,14 @@ function buttonsEnabler() {
     else if(score >= bonusPourCost) {
       score += Math.ceil((score/100)*pourVal)
     }
-    // score -= bonusPourCost
+    score -= bonusPourCost;
+    depense += bonusPourCost;
     bonusPour.disabled = true;
     bonusPourCost *= 3;
     displayScore();
     buttonsEnabler();
-    displayBonusPour(); 
+    displayBonusPour();
+    displayDepense(); 
   }
 
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Bonus3" est pressé
@@ -308,11 +313,13 @@ function buttonsEnabler() {
       score *= 0.5
     }
     score -= bonus3Cost;
+    depense += bonus3Cost;
     bonus3.disabled = true;
     bonus3Cost *= 1;
     displayScore();
     buttonsEnabler();
     displayBonus3();
+    displayDepense();
   }
 
   // Mise à jour initiale de l'affichage et des boutons
@@ -326,6 +333,7 @@ function buttonsEnabler() {
   buttonsEnabler();
   displayTotal();
   displayMulti();
+  displayDepense();
   
 
   multiply.disabled = true;
