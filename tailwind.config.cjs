@@ -6,6 +6,8 @@ module.exports = {
     './components/**/*.{html,js}',
     './pages/**/*.{html,js}',
     './index.html',
+    './*.{html,js}',
+    './src/**/*.{html,js}'
   ],
 
   theme: {
@@ -58,7 +60,7 @@ module.exports = {
         'waving-hand': 'wave 2s linear infinite',
         'fading': 'fade 4s forwards',
         'sliding': 'slide 4s linear infinite',
-        'skull': 'skull 1s',
+        'skull': 'skull 2s',
         'sliding2': 'slide2 4s linear infinite',
         'sliding3': 'slide3 4s linear infinite',
         'sliding4': 'slide4 4s linear infinite',
