@@ -283,15 +283,7 @@ function buttonsEnabler() {
   bonusPour.addEventListener('mousedown', pourcentage);
   bonus3.addEventListener('mousedown', Bonus3);
   
-// fonction random
-function randomBonus() {
-  let bonusMalus = (Math.floor(Math.random() * 10));
-  if(bonusMalus >= 5) {
-    score += 500
-  } else if(bonusMalus < 5) {
-    score = 0
-  }
-}
+
 
 
 
