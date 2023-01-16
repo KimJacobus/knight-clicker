@@ -58,7 +58,7 @@ module.exports = {
         'waving-hand': 'wave 2s linear infinite',
         'fading': 'fade 4s forwards',
         'sliding': 'slide 4s linear infinite',
-        'skull': 'skull 2s',
+        'skull': 'skull 1s',
         'sliding2': 'slide2 4s linear infinite',
         'sliding3': 'slide3 4s linear infinite',
         'sliding4': 'slide4 4s linear infinite',

@@ -16,6 +16,8 @@ var pBonus2 = document.querySelector('#pbonus2');
 var pBonus1 = document.querySelector('#pbonus1');
 var multi = document.querySelector('#multiplicateur');
 var dep = document.querySelector('#POdepense');
+var multiplicateur = document.querySelector('#multiplicateur');
+var reset = document.querySelector('#resetbutton')
 
 // Coûts pour les différentes actions
 var multiplierCost = 50;
@@ -42,7 +44,40 @@ var multiplier = 1;
 var bonusTime = 30;
 var pourVal = 10;
 
-
+// fonction reset
+function resetScore () {
+  console.log('reset')
+  score = 0;
+  clickValue = 1;
+  multiplier = 1;
+  pourVal = 10;
+  multiplierCost = 50
+  bonusTime = 30;
+  displayScore();
+  displayMultiplier();
+  displayAutoclick();
+  displayBonus();
+  displayBonusInter();
+  displayBonusPour();
+  displayBonus3();
+  autoclickOn = false
+  bonusOn = false
+  buttonsEnabler()
+  skull.classList.add("hidden");
+  skullTwo.classList.add("hidden");
+  skullThree.classList.add("hidden");
+  skullFour.classList.add("hidden");
+  skullFive.classList.add("hidden");
+  knight.classList.add("animate-none");
+  knight.classList.add("lg:animate-none");
+  knight.classList.remove("animate-sliding2");
+  knight.classList.remove("lg:animate-sliding4");
+  orc.classList.add("animate-none");
+  orc.classList.add("lg:animate-none");
+  orc.classList.remove("animate-sliding");
+  orc.classList.remove("lg:animate-sliding3");
+  orc.classList.add("animate-bounce");
+}
 
 // Fonction pour mettre à jour l'affichage du score
 function displayScore() {
@@ -351,10 +386,142 @@ function buttonsEnabler() {
   bonusInter.addEventListener('mousedown',reducInterval);
   bonusPour.addEventListener('mousedown', pourcentage);
   bonus3.addEventListener('mousedown', Bonus3);
+  reset.addEventListener('mousedown', resetScore);
   
 
+// ANIMATION
+
+// iterate over the children instead ? 
+// get element by id.children
+
+var skull = document.getElementById('skull'); 
+var skullTwo = document.getElementById('skullTwo'); 
+var skullThree = document.getElementById('skullThree'); 
+var skullFour = document.getElementById('skullFour'); 
+var skullFive = document.getElementById('skullFive'); 
+var knight = document.querySelector('#knight');
+var orc = document.querySelector('#orc')
+
+var click = document.querySelector('#click');
+
+
+var blockone = true;
+var blocktwo = true;
+var blockthree = true;
+var blockfour = true;
+var blockfive = true;
 
 
 
+
+click.addEventListener("click", CallSkullOne);
+click.addEventListener("click", callSlideKnight);
+click.addEventListener("click", callSlideOrc);
+
+function callSlideKnight() {
+    knight.classList.add("animate-sliding2");
+    knight.classList.add("lg:animate-sliding4");
+}
+function callSlideOrc() {
+    orc.classList.add("animate-sliding");
+    orc.classList.add("lg:animate-sliding3");
+    orc.classList.remove("animate-bounce");
+}
+function CallSkullOne(){ 
+
+    
+    if(blockone) {
+        blockone = false;
+        
+        skull.classList.remove("hidden");
+        
+        setTimeout(()=> {
+           
+            blockone = true; 
+            CallSkullTwo();
+            skull.classList.add("hidden");
+        },2000)
+        
+    }
+}
+
+
+function CallSkullTwo() {
+
+
+    
+    if(blocktwo) {
+
+        blocktwo = false;
+    
+    skullTwo.classList.remove("hidden");
+
+    setTimeout(()=> {
+        skullTwo.classList.add("hidden");
+        blocktwo = true;
+
+    },2000)
+
+    setTimeout(()=> {
+            CallSkullThree();
+    },500)
+}
+}
+
+
+function CallSkullThree() {
+
+    
+    if(blockthree) {
+        blockthree = false;
+    
+    skullThree.classList.remove("hidden");
+
+    setTimeout(()=> {
+        skullThree.classList.add("hidden");
+        blockthree = true;
+    },2000)
+
+    setTimeout(()=> {
+            CallSkullFour();
+    },300)
+}
+}
+
+function CallSkullFour() {
+
+    
+    if(blockfour) {
+        blockfour = false;
+    
+    skullFour.classList.remove("hidden");
+    setTimeout(()=> {
+        
+        skullFour.classList.add("hidden");
+        blockfour = true;
+    },2000)
+
+    setTimeout(()=> {
+            CallSkullFive();
+    },800)
+}
+}
+
+function CallSkullFive() {
+    let blockfive = true;
+    
+    if(blockfive) {
+        blockfive = false;
+    skullFive.classList.remove("hidden");
+
+    setTimeout(()=> {
+        blockfive = true; 
+        skullFive.classList.add("hidden");
+    },2000)
+
+    // setTimeout(()=> {
+    // },300)
+}
+}
 
 
