@@ -16,8 +16,7 @@ var pBonus2 = document.querySelector('#pbonus2');
 var pBonus1 = document.querySelector('#pbonus1');
 var multi = document.querySelector('#multiplicateur');
 var dep = document.querySelector('#POdepense');
-var multiplicateur = document.querySelector('#multiplicateur');
-var reset = document.querySelector('#resetbutton')
+var reset = document.querySelector('#resetbutton');
 
 // Coûts pour les différentes actions
 var multiplierCost = 50;
