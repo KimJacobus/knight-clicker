@@ -354,9 +354,6 @@ function buttonsEnabler() {
 
 // ANIMATION
 
-// iterate over the children instead ? 
-// get element by id.children
-
 var skull = document.getElementById('skull'); 
 var skullTwo = document.getElementById('skullTwo'); 
 var skullThree = document.getElementById('skullThree'); 
