@@ -1,4 +1,4 @@
 import { defineConfig } from "vite"
-import default defineConfig({
+export default defineConfig({
     base: '/knight-clicker/',
 })
