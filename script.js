@@ -14,6 +14,8 @@ var pClick = document.querySelector('#pclick');
 var pBonus3 = document.querySelector('#pbonus3');
 var pBonus2 = document.querySelector('#pbonus2');
 var pBonus1 = document.querySelector('#pbonus1');
+var multi = document.querySelector('#multiplicateur');
+var dep = document.querySelector('#POdepense');
 
 // Coûts pour les différentes actions
 var multiplierCost = 50;
@@ -48,7 +50,11 @@ function displayScore() {
 
 // Fonction pour mettre à jour l'affichage du multiplicateur
 function displayMultiplier() {
-  pMultiply.innerText = 'x' + multiplier + ' (coût : ' + multiplierCost + ')';
+  pMultiply.innerText = '(coût : ' + multiplierCost + ')';
+}
+//Fonction d'affichage multiplicateur
+function displayMulti() {
+  multi.innerText = 'Multiplicateur x' + multiplier;
 }
 
 // Fonction pour mettre à jour l'affichage du bouton Autoclick
@@ -89,6 +95,15 @@ if (localStorage.score) {
   localStorage.score = score;
 }
   document.getElementById("pointtotal").innerText = ('Total PO ' +localStorage.score);
+}
+//Fonction pour mettre a jour l'affichage des depense
+function displayDepense() {
+  
+}
+// Fonction pour caluler les depenses
+function poDepense() {
+score 
+  
 }
 
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
@@ -202,6 +217,7 @@ function buttonsEnabler() {
   clickValue *= 2;
   }
   multiplierCost *= 3;
+  displayMulti();
   buttonsEnabler();
   displayScore();
   displayMultiplier();
@@ -309,6 +325,8 @@ function buttonsEnabler() {
   displayBonus3();
   buttonsEnabler();
   displayTotal();
+  displayMulti();
+  
 
   multiply.disabled = true;
   autoclick.disabled = true;
