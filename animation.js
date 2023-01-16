@@ -23,22 +23,17 @@ var blockfive = true;
 
 
 
-
-
-
-
-
 click.addEventListener("click", CallSkullOne);
 click.addEventListener("click", callSlideKnight);
 click.addEventListener("click", callSlideOrc);
 
 function callSlideKnight() {
-    knight.classList.remove("animate-none");
-    knight.classList.remove("lg:animate-none");
+    knight.classList.add("animate-sliding2");
+    knight.classList.add("lg:animate-sliding4");
 }
 function callSlideOrc() {
-    orc.classList.remove("animate-none");
-    orc.classList.remove("lg:animate-none");
+    orc.classList.add("animate-sliding");
+    orc.classList.add("lg:animate-sliding3");
 }
 function CallSkullOne(){ 
 
