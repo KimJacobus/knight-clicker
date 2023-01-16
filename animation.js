@@ -8,6 +8,8 @@ var skullTwo = document.getElementById('skullTwo');
 var skullThree = document.getElementById('skullThree'); 
 var skullFour = document.getElementById('skullFour'); 
 var skullFive = document.getElementById('skullFive'); 
+var knight = document.querySelector('#knight');
+var orc = document.querySelector('#orc')
 
 var click = document.querySelector('#click');
 
@@ -27,7 +29,17 @@ var blockfive = true;
 
 
 click.addEventListener("click", CallSkullOne);
+click.addEventListener("click", callSlideKnight);
+click.addEventListener("click", callSlideOrc);
 
+function callSlideKnight() {
+    knight.classList.remove("animate-none");
+    knight.classList.remove("lg:animate-none");
+}
+function callSlideOrc() {
+    orc.classList.remove("animate-none");
+    orc.classList.remove("lg:animate-none");
+}
 function CallSkullOne(){ 
 
     
