@@ -47,7 +47,7 @@ var clickPour = clickValue*multiplier;
 // fonction reset
 function resetScore () {
   console.log('reset')
-  score = 0;
+  score = 0+1;
   clickValue = 1;
   multiplier = 1;
   pourVal = 10;
@@ -56,7 +56,9 @@ function resetScore () {
   bonusInterCost = 100;
   bonusPourCost = 100;
   depense = 0;
-  
+  localStorage.score = 0;
+  autoclickOn = false;
+  bonusOn = false;
   displayScore();
   displayMultiplier();
   displayAutoclick();
@@ -64,9 +66,10 @@ function resetScore () {
   displayBonusInter();
   displayBonusPour();
   displayBonus3();
-  autoclickOn = false
-  bonusOn = false
-  buttonsEnabler()
+  buttonsEnabler();
+  displayMulti();
+  displayTotal();
+  displayDepense();
   skull.classList.add("hidden");
   skullTwo.classList.add("hidden");
   skullThree.classList.add("hidden");
