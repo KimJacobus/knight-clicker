@@ -261,7 +261,7 @@ function buttonsEnabler() {
   function disableBonus() {
   bonusOn = false;
   bonusTime = 30;
-  clickValue = multiplier;
+  clickValue = ((multiplier/100)*pourVal)*10;
   displayBonus();
   buttonsEnabler();
   }
