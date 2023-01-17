@@ -55,6 +55,7 @@ function resetScore () {
   bonusTime = 30;
   bonusInterCost = 100;
   bonusPourCost = 100;
+  depense = 0;
   
   displayScore();
   displayMultiplier();
