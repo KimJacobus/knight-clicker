@@ -45,6 +45,7 @@ var pourVal = 10;
 // fonction reset
 function resetScore () {
   console.log('reset')
+  // window.location.reload();
   score = 0;
   clickValue = 1;
   multiplier = 1;
