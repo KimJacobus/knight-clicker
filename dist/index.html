@@ -5,14 +5,14 @@
     <link rel="icon" type="image/svg+xml" href="/knight-clicker/assets/8bitKnight-1d82c6be.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Knight Clicker</title>
-    <script type="module" crossorigin src="/knight-clicker/assets/index-c38cecc6.js"></script>
-    <link rel="stylesheet" href="/knight-clicker/assets/index-2852beb3.css">
+    <script type="module" crossorigin src="/knight-clicker/assets/index-6b3ed06c.js"></script>
+    <link rel="stylesheet" href="/knight-clicker/assets/index-31452f0a.css">
   </head>
   <body>
 
 
     
- 
+
 
     <div class="grid lg:grid-cols-5 grid-cols-2 h-screen w-screen">
 
@@ -51,7 +51,7 @@
 
       <!-- Ecran centrale -->
 
-      <div class="order-last lg:order-2 grid lg:grid-rows-7 lg:col-span-3 grid-rows-2 col-span-2 bg-cover bg-center" style="background-image: url(/knight-clicker/assets/wallpaperflare.com_wallpaper3-7ba6604a.jpg)">
+      <div class="order-last lg:order-2 grid lg:grid-rows-7 lg:col-span-3 grid-rows-2 col-span-2 bg-cover bg-center" style="background-image: url(/knight-clicker/assets/chateau_derriere_petit-0a582ae8.png)">
         <div id="display" class="trickster text-4xl row-span-1 justify-self-center">
         </div>
         <!-- cranes -->
@@ -67,32 +67,32 @@
   
           <img id="skullFive" class="hidden absolute lg:left-[55rem] lg:top-[10rem] sm:left-[50rem] sm:bottom-[20rem] left-[0rem] bottom-[20rem] object-scale-down h-10 w-10 animate-skull"  src="/knight-clicker/assets/skull-5c3c8efe.png" alt="" srcset="">
         </div>
+        <!-- fin crânes -->
         <div class="lg:row-span-3 row-span-1">
-          <div class="grid grid-cols-3">
+          <div class="grid grid-cols-3 pt-32 lg:pb-20">
             <div class="row-span-1 self-end justify-self-center z-20">
-              <img id="knight" class="object-scale-down h-10 w-10  md:h-20 md:w-20" src="/knight-clicker/assets/8bitKnight-1d82c6be.png" alt="" srcset="">
+              <img id="knight" class="object-scale-down h-10 w-10  md:h-20 md:w-20 " src="/knight-clicker/assets/8bitKnight-1d82c6be.png" alt="" srcset="">
             </div>
             <div class="row-span-1 self-center justify-self-center w-max md:w-full md:h-full z-0">
-              <!-- <img class="object-scale-down h-84 w-80  md:h-max md:w-max " src="/pictures/chateau.png" alt="" srcset=""> -->
             </div>
             <div class="row-span-1 self-end justify-self-center z-20">
               <img id="orc" class="object-scale-down h-14 w-14  md:h-20 md:w-20 animate-bounce" src="/knight-clicker/assets/8BitOrc-786fd04e.png" alt="" srcset="">
             </div>
           </div>
         </div>
-        <div class="row-span-2 justify-self-center self-center pb-6">
-          <button id="click" value="click"  class="hover:animate-spin hover:scale-125 shadow rounded-full border mt-2">
-            <img class="object-scale-down h-14 w-14 md:object-none md:h-full md:w-full" src="/knight-clicker/assets/doubleepee-5a17ae14.png" alt="" srcset="">
+        <div class="row-span-2 justify-self-center self-center pb-6">          
+          <button id="click" value="click"  class="hover:animate-spin hover:scale-125 shadow rounded-full border mt-2" data-bs-toggle="tooltip" title="Click me !">
+            <img class="object-scale-down h-14 w-14 md:object-none md:h-full md:w-full animate-waving-hand hover:animate-none" src="/knight-clicker/assets/doubleepee-5a17ae14.png" alt="" srcset="">
           </button>
         </div>
 
-        <div class="trickster text-white text-lg grid grid-cols-5 justify-evenly bg-contain" style="background-image: url(/knight-clicker/assets/woodenbg-46acf4ee.jpg);">
-          <div id="pointtotal" class="">Total PO</div>
-          <div id="POdepense" class="">Dépense</div>
-          <div id="multiplicateur" class="">multiplicateur</div>          
-          <div id="pclick" class=""></div>
-          <div id="reset" class="">
-            <button id="resetbutton" value="click"  class="">
+        <div class="trickster text-amber-100 text-lg grid grid-cols-5 justify-between text-center bg-contain" style="background-image: url(/knight-clicker/assets/woodenbg-46acf4ee.jpg);">
+          <div id="pointtotal" class="self-end">Total PO</div>
+          <div id="POdepense" class="self-end">Dépense</div>
+          <div id="multiplicateur" class="self-end">multiplicateur</div>          
+          <div id="pclick" class="self-start">PO/s : <br> +0 </div>
+          <div id="reset" class="self-end">
+            <button id="resetbutton" value="reset" type="reset" class="hover:scale-110" data-bs-toggle="tooltip" title="Restart">
               <img class="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAYAAACGVs+MAAAACXBIWXMAAC4jAAAuIwF4pT92AAAGgWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDIgNzkuMTY0NDg4LCAyMDIwLzA3LzEwLTIyOjA2OjUzICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjIuMCAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIzLTAxLTE2VDA5OjIxOjUzKzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTAxLTE2VDA5OjIxOjUzKzAxOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMy0wMS0xNlQwOToyMTo1MyswMTowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozMTc5NmVmMS04MDk1LTg4NGYtODZmZi02MzhmYjdhZDcyZjQiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDozOGJhNzkxNi1hZDVhLTc3NGUtYjFkYy0yY2JlZjM0NTUxMGYiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpmMGVmODA4Ny1kYzdkLWNkNDgtOGMyOS0xNTlhOGNiZThjOGUiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmYwZWY4MDg3LWRjN2QtY2Q0OC04YzI5LTE1OWE4Y2JlOGM4ZSIgc3RFdnQ6d2hlbj0iMjAyMy0wMS0xNlQwOToyMTo1MyswMTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIyLjAgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDozMTc5NmVmMS04MDk1LTg4NGYtODZmZi02MzhmYjdhZDcyZjQiIHN0RXZ0OndoZW49IjIwMjMtMDEtMTZUMDk6MjE6NTMrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyMi4wIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+eG1wLmlpZDpiYzBmNTllOC05YjQzLTRiNDYtYTMyOS0zMzFlZTBmZDlhMjE8L3JkZjpsaT4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6QYKtBAAAG6UlEQVRIiY1XzWsUWxb/3a/qqkpXp40tCoGHYHQpWQhixND+C+JqEB64HmR4i+HBOMLM4H4eDLMYGIiQPGbpNijq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" alt="" srcset="">
             </button>
           </div>
@@ -110,7 +110,7 @@
           </div>
         </div>
         <div class="row-span-1 justify-self-center self-center text-center">
-          <button id="bonus2" value="bonus" class="bg-transparent hover:scale-125 hover:animate-pulse shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Revenu instantané">
+          <button id="bonus2" value="bonus" class="bg-transparent hover:scale-125 hover:animate-pulse shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Augmente le pourcentage de gain">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAlCAYAAAC6TzLyAAAACXBIWXMAAC4jAAAuIwF4pT92AAAGgWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDIgNzkuMTY0NDg4LCAyMDIwLzA3LzEwLTIyOjA2OjUzICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjIuMCAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIzLTAxLTEyVDE1OjIzOjA0KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTAxLTEyVDE1OjIzOjA0KzAxOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMy0wMS0xMlQxNToyMzowNCswMTowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxZmU5NDRkNy1jZjg0LTg4NDQtOTA1Zi02NWI2YjNjNjU5YzYiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo3NDU4NmI4OC03NGQ0LTA4NGMtOTA1OC00YTE5ZGFiNjFlMGYiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpmNDY2MDg0Ni01ZDhkLWEyNGEtYjU0My0xNGZkNDZmYTk2YWEiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmY0NjYwODQ2LTVkOGQtYTI0YS1iNTQzLTE0ZmQ0NmZhOTZhYSIgc3RFdnQ6d2hlbj0iMjAyMy0wMS0xMlQxNToyMzowNCswMTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIyLjAgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDoxZmU5NDRkNy1jZjg0LTg4NDQtOTA1Zi02NWI2YjNjNjU5YzYiIHN0RXZ0OndoZW49IjIwMjMtMDEtMTJUMTU6MjM6MDQrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyMi4wIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+eG1wLmRpZDplNWM4ODIzYS1kNTBlLWVjNDktOWQyMS01MTU3YzBkYmJhOGU8L3JkZjpsaT4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6yr9ZGAAAIqklEQVRYhbWYa6xd11HHfzNr7X3OPceP2HGj2qmCHcK1fR0nqZ3EUUKTRnaKY5VEgAQBqVGpQkWpCKqKoKgqhAgQ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" alt="" srcset=""> 
           </button>
           <div id="pbonus2" class="trickster text-xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/knight-clicker/assets/briques-94a2e8d3.png);">
