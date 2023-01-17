@@ -44,6 +44,8 @@ var multiplier = 1;
 var bonusTime = 30;
 var pourVal = 10;
 var disPourVal = 10;
+var totalScore = (score*multiplier*((pourVal/100)*10))
+var scoreBonus3 = 0
 
 // fonction reset
 function resetScore () {
@@ -98,13 +100,13 @@ function displayClickValue() {
 } 
 //Fonction pour mettre a jour l'affichage du total
 function displayTotal() {
-  let totalScore = (score*multiplier*((pourVal/100)*10))
+  // let totalScore = (score*multiplier*((pourVal/100)*10))
 if (localStorage.totalScore) {
   localStorage.totalScore = Number(localStorage.totalScore)+(1*clickValue);
 } else {
   localStorage.totalScore = totalScore;
 }
-  document.getElementById("pointtotal").innerText = ('Total : \n' +Math.floor(localStorage.totalScore));
+  document.getElementById("pointtotal").innerText = ('Total : \n' +Math.floor((parseInt(localStorage.totalScore) + scoreBonus3)));
 }
 //Fonction pour mettre a jour l'affichage des depense
 function displayDepense() {
@@ -317,16 +319,15 @@ function buttonsEnabler() {
     score -= bonus3Cost;
     depense += bonus3Cost;
     if(confirm("Êtes-vous sûr de vouloir boire la potion ?")) {
-      if(bonusMalus === 1) { score *= 5 + bonus3Cost }        
-      else if(bonusMalus > 1 && bonusMalus <= 3) { score *= 1.1 + bonus3Cost }        
-      else if(bonusMalus > 3 && bonusMalus <= 5) { score *= 1.3 + bonus3Cost }
+      if(bonusMalus === 1) { scoreBonus3 = (score *= 5 + bonus3Cost) }        
+      else if(bonusMalus > 1 && bonusMalus <= 3) { scoreBonus3 = (score *= 1.1 + bonus3Cost) }        
+      else if(bonusMalus > 3 && bonusMalus <= 5) { scoreBonus3 = (score *= 1.3 + bonus3Cost) }
       else if(bonusMalus > 5 && bonusMalus <=7) {
         if(score <= bonus3Cost) { score = 0 }
         else score *= 0.5 }
       else if(bonusMalus > 7 && bonusMalus <=9) { score = 0 }
       else alert("Rien ne se passe...") }
     else score += bonus3Cost
-
     bonus3.disabled = true;
     bonus3Cost *= 1;
     displayScore();
