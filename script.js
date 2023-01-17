@@ -10,7 +10,12 @@ var bonus3 = document.querySelector('#bonus3');
 var pBonus = document.querySelector('#pbonus');
 var pMultiply = document.querySelector('#pmultiply');
 var pAutoclick = document.querySelector('#pautoclick');
-var pClick = document.querySelector('#pclick')
+var pClick = document.querySelector('#pclick');
+var pBonus3 = document.querySelector('#pbonus3');
+var pBonus2 = document.querySelector('#pbonus2');
+var pBonus1 = document.querySelector('#pbonus1');
+var multiplicateur = document.querySelector('#multiplicateur');
+var reset = document.querySelector('#resetbutton')
 
 // Coûts pour les différentes actions
 var multiplierCost = 50;
@@ -31,17 +36,50 @@ var bonusOn = false;
     
 // Variables pour le score, la valeur de chaque click, le multiplicateur et le temps de bonus
 var score = 0;
-var clickValue = 100;
+var clickValue = 1;
 var multiplier = 1;
 var bonusTime = 30;
 
 var pourVal = 10;
 
-
+// fonction reset
+function resetScore () {
+  console.log('reset')
+  score = 0;
+  clickValue = 1;
+  multiplier = 1;
+  pourVal = 10;
+  multiplierCost = 50
+  bonusTime = 30;
+  bonusInterCost = 100;
+  bonusPourCost = 100;
+  displayScore();
+  displayMultiplier();
+  displayAutoclick();
+  displayBonus();
+  displayBonusInter();
+  displayBonusPour();
+  displayBonus3();
+  autoclickOn = false
+  bonusOn = false
+  buttonsEnabler()
+  skull.classList.add("hidden");
+  skullTwo.classList.add("hidden");
+  skullThree.classList.add("hidden");
+  skullFour.classList.add("hidden");
+  skullFive.classList.add("hidden");
+  knight.classList.add("animate-none");
+  knight.classList.add("lg:animate-none");
+  knight.classList.remove("animate-sliding2");
+  knight.classList.remove("lg:animate-sliding4");
+  orc.classList.remove("animate-sliding");
+  orc.classList.remove("lg:animate-sliding3");
+  orc.classList.add("animate-bounce");
+}
 
 // Fonction pour mettre à jour l'affichage du score
 function displayScore() {
-  display.innerText = score;
+  display.innerText = Math.round(score);
 }
 
 // Fonction pour mettre à jour l'affichage du multiplicateur
@@ -61,31 +99,35 @@ function displayBonus() {
 
 // Fonction pour mettre à jour l'affichage du temps de bonus
 function displayBonusTime() {
-  pBonus.innerText = 'Bonus (temps : ' + bonusTime + ' sec)';
+  pBonus.innerText = 'Durée : ' + bonusTime + ' s';
 }
 // Fonction pour mettre à jour l'affichage du bonus inter
 function displayBonusInter() {
-  bonusInter.innerText = 'Reduire Intervalle (coût : '+ bonusInterCost +')';
+  pBonus1.innerText = '(coût : '+ bonusInterCost +')';
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonusPour() {
-  bonusPour.innerText = 'Augmente le pourcentage (coût : '+ bonusPourCost +')';
+  pBonus2.innerText = `+${Math.floor(pourVal)}% (coût : ${bonusPourCost})`;
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonus3() {
-  bonus3.innerText = 'je sais pas encore (coût : '+ bonus3Cost +')';
+  pBonus3.innerText = '(coût : '+ bonus3Cost +')';
 }
 //Fonction pour mettre a jour l'affichage du ClickValue
 function displayClickValue() {
-  pClick.innerText = '+ '+ clickValue + ' PO ';
+  pClick.innerText = '+ '+ clickValue + ' PO/s ';
 } 
 
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
 function multiplyEnabler() {
   if (score >= multiplierCost) {
     multiply.disabled = false;
+    multiply.classList.remove("cursor-not-allowed","opacity-50");
+    multiply.classList.add("hover:animate-ping");
   } else {
     multiply.disabled = true;
+    multiply.classList.add("cursor-not-allowed","opacity-50");
+    multiply.classList.remove("hover:animate-ping");
   }
 }
 
@@ -93,8 +135,12 @@ function multiplyEnabler() {
 function autoclickEnabler() {
   if (!autoclickOn && score >= autoclickCost) {
     autoclick.disabled = false;
+    autoclick.classList.remove("cursor-not-allowed","opacity-50");
+    autoclick.classList.add("hover:animate-bounce");
   } else {
     autoclick.disabled = true;
+    autoclick.classList.add("cursor-not-allowed","opacity-50");
+    autoclick.classList.remove("hover:animate-bounce");
   }
 }
 
@@ -102,8 +148,12 @@ function autoclickEnabler() {
 function bonusEnabler() {
   if (!bonusOn && score >= bonusCost) {
     bonus.disabled = false;
+    bonus.classList.remove("cursor-not-allowed","opacity-50");
+    bonus.classList.add("hover:animate-waving-hand");
   } else {
     bonus.disabled = true;
+    bonus.classList.add("cursor-not-allowed","opacity-50");
+    bonus.classList.remove("hover:animate-waving-hand");
   }
 }
 
@@ -111,16 +161,28 @@ function bonusEnabler() {
 function intrevalEnabler() {
   if (score >= bonusInterCost && interTime > 500) {
     bonusInter.disabled = false;
+    bonusInter.classList.remove("cursor-not-allowed","opacity-50");
+    bonusInter.classList.add("hover:animate-pulse");
+    bonusInter.classList.add("hover:scale-125");
   } else {
     bonusInter.disabled = true;
+    bonusInter.classList.add("cursor-not-allowed","opacity-50");
+    bonusInter.classList.remove("hover:animate-pulse");
+    bonusInter.classList.remove("hover:scale-125");
   }
 }
 // Fonction pour activer ou désactiver le bouton "Pourcentage" en fonction du score
 function pourcentEnabler() {
   if (score >= bonusPourCost) {
     bonusPour.disabled = false;
+    bonusPour.classList.remove("cursor-not-allowed","opacity-50");
+    bonusPour.classList.add("hover:animate-pulse");
+    bonusPour.classList.add("hover:scale-125");
   } else {
     bonusPour.disabled = true;
+    bonusPour.classList.add("cursor-not-allowed","opacity-50");
+    bonusPour.classList.remove("hover:animate-pulse");
+    bonusPour.classList.remove("hover:scale-125");
   }
 }
 
@@ -128,8 +190,14 @@ function pourcentEnabler() {
 function bonus3Enabler() {
   if (score >= bonus3Cost) {
     bonus3.disabled = false;
+    bonus3.classList.remove("cursor-not-allowed","opacity-50");
+    bonus3.classList.add("hover:animate-pulse");
+    bonus3.classList.add("hover:scale-125");
   } else {
     bonus3.disabled = true;
+    bonus3.classList.add("cursor-not-allowed","opacity-50");
+    bonus3.classList.remove("hover:animate-pulse");
+    bonus3.classList.remove("hover:scale-125");
   }
 }
 
@@ -154,7 +222,7 @@ function buttonsEnabler() {
   // Fonction pour augmenter le multiplicateur lorsque le bouton "Multiplier" est pressé
   function increaseMultiplier() {
   score -= multiplierCost;
-  multiplier += 1;
+  multiplier *= 2;
   clickValue = multiplier;
   if (bonusOn) {
   clickValue *= 2;
@@ -226,12 +294,14 @@ function buttonsEnabler() {
     
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Pourcentage" est pressé
   function pourcentage() {
-    if(score >= bonusPourCost) {
+    if(score >= bonusPourCost && pourVal <= 15) {
       score += Math.ceil((score/100)*pourVal);
-      pourVal *= 1.5;
-
+      pourVal *= 1.1;
     }
-    // score -= bonusPourCost;
+    else if(score >= bonusPourCost) {
+      score += Math.ceil((score/100)*pourVal)
+    }
+    // score -= bonusPourCost
     bonusPour.disabled = true;
     bonusPourCost *= 3;
     displayScore();
@@ -241,9 +311,21 @@ function buttonsEnabler() {
 
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Bonus3" est pressé
   function Bonus3() {
+    let bonusMalus = (Math.floor(Math.random() * 10));
     score -= bonus3Cost;
+    if(confirm("Êtes-vous sûr de vouloir boire la potion ?")) {
+      if(bonusMalus === 1) { score *= 5 }        
+      else if(bonusMalus > 1 && bonusMalus <= 3) { score *= 1.1 }        
+      else if(bonusMalus > 3 && bonusMalus <= 5) { score *= 1.3 }
+      else if(bonusMalus > 5 && bonusMalus <=7) {
+        if(score <= bonus3Cost) { score = 0 }
+        else score *= 0.5 }
+      else if(bonusMalus > 7 && bonusMalus <=9) { score = 0 }
+      else alert("Rien ne se passe...") }
+    else score += bonus3Cost
+
     bonus3.disabled = true;
-    bonus3Cost *= 3;
+    bonus3Cost *= 1;
     displayScore();
     buttonsEnabler();
     displayBonus3();
@@ -273,4 +355,142 @@ function buttonsEnabler() {
   bonusInter.addEventListener('mousedown',reducInterval);
   bonusPour.addEventListener('mousedown', pourcentage);
   bonus3.addEventListener('mousedown', Bonus3);
+  reset.addEventListener('mousedown', resetScore);
   
+
+// ANIMATION
+
+// iterate over the children instead ? 
+// get element by id.children
+
+var skull = document.getElementById('skull'); 
+var skullTwo = document.getElementById('skullTwo'); 
+var skullThree = document.getElementById('skullThree'); 
+var skullFour = document.getElementById('skullFour'); 
+var skullFive = document.getElementById('skullFive'); 
+var knight = document.getElementById('knight');
+var orc = document.getElementById('orc')
+
+var click = document.querySelector('#click');
+
+
+var blockone = true;
+var blocktwo = true;
+var blockthree = true;
+var blockfour = true;
+var blockfive = true;
+
+
+
+
+click.addEventListener("click", CallSkullOne);
+click.addEventListener("click", callSlideKnight);
+click.addEventListener("click", callSlideOrc);
+
+function callSlideKnight() {
+    knight.classList.add("animate-sliding2");
+    knight.classList.add("lg:animate-sliding4");
+}
+function callSlideOrc() {
+    orc.classList.add("animate-sliding");
+    orc.classList.add("lg:animate-sliding3");
+    orc.classList.remove("animate-bounce");
+}
+function CallSkullOne(){ 
+
+    
+    if(blockone) {
+        blockone = false;
+        
+        skull.classList.remove("hidden");
+        
+        setTimeout(()=> {
+           
+            blockone = true; 
+            CallSkullTwo();
+            skull.classList.add("hidden");
+        },2000)
+        
+    }
+}
+
+
+function CallSkullTwo() {
+
+
+    
+    if(blocktwo) {
+
+        blocktwo = false;
+    
+    skullTwo.classList.remove("hidden");
+
+    setTimeout(()=> {
+        skullTwo.classList.add("hidden");
+        blocktwo = true;
+
+    },2000)
+
+    setTimeout(()=> {
+            CallSkullThree();
+    },500)
+}
+}
+
+
+function CallSkullThree() {
+
+    
+    if(blockthree) {
+        blockthree = false;
+    
+    skullThree.classList.remove("hidden");
+
+    setTimeout(()=> {
+        skullThree.classList.add("hidden");
+        blockthree = true;
+    },2000)
+
+    setTimeout(()=> {
+            CallSkullFour();
+    },300)
+}
+}
+
+function CallSkullFour() {
+
+    
+    if(blockfour) {
+        blockfour = false;
+    
+    skullFour.classList.remove("hidden");
+    setTimeout(()=> {
+        
+        skullFour.classList.add("hidden");
+        blockfour = true;
+    },2000)
+
+    setTimeout(()=> {
+            CallSkullFive();
+    },800)
+}
+}
+
+function CallSkullFive() {
+    let blockfive = true;
+    
+    if(blockfive) {
+        blockfive = false;
+    skullFive.classList.remove("hidden");
+
+    setTimeout(()=> {
+        blockfive = true; 
+        skullFive.classList.add("hidden");
+    },2000)
+
+    // setTimeout(()=> {
+    // },300)
+}
+}
+
+

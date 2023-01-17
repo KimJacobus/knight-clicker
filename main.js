@@ -19,9 +19,8 @@ module.exports = {
       fontFamily: {
         primary: "karrik" 
       }, 
-
-
       extend: {
+     
 
       },
     },
