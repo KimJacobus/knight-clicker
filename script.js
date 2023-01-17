@@ -19,11 +19,11 @@ var dep = document.querySelector('#POdepense');
 var reset = document.querySelector('#resetbutton');
 
 // Coûts pour les différentes actions
-var multiplierCost = 50;
-var autoclickCost = 20;
+var multiplierCost = 10;
+var autoclickCost = 10;
 var bonusCost = 10;
-var bonusInterCost = 100;
-var bonusPourCost = 100;
+var bonusInterCost = 10;
+var bonusPourCost = 10;
 var bonus3Cost = 10;
 var depense = 0;
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
@@ -42,6 +42,7 @@ var clickValue = 1;
 var multiplier = 1;
 var bonusTime = 30;
 var pourVal = 10;
+var clickPour = clickValue*multiplier;
 
 // fonction reset
 function resetScore () {
@@ -191,7 +192,7 @@ function intrevalEnabler() {
 }
 // Fonction pour activer ou désactiver le bouton "Pourcentage" en fonction du score
 function pourcentEnabler() {
-  if (score >= bonusPourCost) {
+  if (score >= bonusPourCost && pourVal <= 15) {
     bonusPour.disabled = false;
     bonusPour.classList.remove("cursor-not-allowed","opacity-50");
     bonusPour.classList.add("hover:animate-pulse");
@@ -321,22 +322,19 @@ function buttonsEnabler() {
   }
     
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Pourcentage" est pressé
-  function pourcentage() {
-    if(score >= bonusPourCost && pourVal <= 15) {
-      score += Math.ceil((score/100)*pourVal);
+  function pourcentage() { 
+    if(score >= bonusPourCost) {
       pourVal *= 1.1;
-    }
-    else if(score >= bonusPourCost) {
-      score += Math.ceil((score/100)*pourVal)
+      clickValue += Math.min((multiplier/100)*pourVal);
     }
     score -= bonusPourCost;
     depense += bonusPourCost;
     bonusPour.disabled = true;
-    bonusPourCost *= 3;
+    bonusPourCost *= 1;
     displayScore();
     buttonsEnabler();
     displayBonusPour();
-    displayDepense(); 
+    displayDepense();
   }
 
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Bonus3" est pressé
@@ -369,7 +367,6 @@ function buttonsEnabler() {
   displayTotal();
   displayMulti();
   displayDepense();
-  
 
   multiply.disabled = true;
   autoclick.disabled = true;
