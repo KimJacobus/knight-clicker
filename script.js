@@ -42,12 +42,11 @@ var clickValue = 1;
 var multiplier = 1;
 var bonusTime = 30;
 var pourVal = 10;
-var clickPour = clickValue*multiplier;
 
 // fonction reset
 function resetScore () {
   location.reload();
-  localStorage.score = -1;
+  localStorage.score = 0-1;
 
 }
 
@@ -85,7 +84,7 @@ function displayBonusInter() {
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonusPour() {
-  pBonus2.innerText = `+${Math.floor(pourVal)}% (coût : ${bonusPourCost})`;
+  pBonus2.innerText = `+${Math.max(pourVal)}% (coût : ${bonusPourCost})`;
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonus3() {
@@ -97,9 +96,9 @@ function displayClickValue() {
 } 
 //Fonction pour mettre a jour l'affichage du total
 function displayTotal() {
-if (localStorage.score) {
-  localStorage.score = Number(localStorage.score)+1;
-} else {
+  if (localStorage.score) {
+    localStorage.score = Number(localStorage.score)+1;
+  } else {
   localStorage.score = score;
 }
   document.getElementById("pointtotal").innerText = ('Total PO ' +localStorage.score);
