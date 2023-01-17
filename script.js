@@ -19,12 +19,12 @@ var dep = document.querySelector('#POdepense');
 var reset = document.querySelector('#resetbutton');
 
 // Coûts pour les différentes actions
-var multiplierCost = 10;
-var autoclickCost = 10;
-var bonusCost = 10;
-var bonusInterCost = 10;
-var bonusPourCost = 10;
-var bonus3Cost = 10;
+var multiplierCost = 30;
+var autoclickCost = 50;
+var bonusCost = 100;
+var bonusInterCost = 200;
+var bonusPourCost = 100;
+var bonus3Cost = 100;
 var depense = 0;
 
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
@@ -223,7 +223,7 @@ function buttonsEnabler() {
   if (bonusOn) {
   clickValue *= 2;
   }
-  multiplierCost *= 3;
+  multiplierCost *= 2;
   displayMulti();
   buttonsEnabler();
   displayScore();
@@ -289,7 +289,7 @@ function buttonsEnabler() {
     bonusInter.disabled = true;
     score -= bonusInterCost;
     depense += bonusInterCost;
-    bonusInterCost *= 5;
+    bonusInterCost *= 3;
     buttonsEnabler();
     displayScore();
     displayBonusInter(); 
@@ -305,7 +305,7 @@ function buttonsEnabler() {
     score -= bonusPourCost;
     depense += bonusPourCost;
     bonusPour.disabled = true;
-    bonusPourCost *= 1;
+    bonusPourCost *= 2;
     displayScore();
     buttonsEnabler();
     displayBonusPour();
