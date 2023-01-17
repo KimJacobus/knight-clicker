@@ -1,0 +1,20 @@
+@font-face {
+    font-family : trickster;
+    src: url(font/Trickster-Reg.otf)
+}
+@font-face {
+    font-family : karrik;
+    src: url(font/Karrik-Regular.otf)
+}
+
+
+/* font-classes */
+
+.trickster {
+    font-family: trickster;
+}
+
+.karrik {
+    font-family: karrik;
+}
+
