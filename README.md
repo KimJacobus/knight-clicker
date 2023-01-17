@@ -14,7 +14,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="pictures/8bitKnight.png" alt="Logo" width="80" height="200">
+    <img src="pictures/8bitKnight.png" alt="Logo" width="110" height="200">
   
 
   <h3 class ="trickster text-center" >Knight-Clicker</h3>
