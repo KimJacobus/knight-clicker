@@ -26,6 +26,7 @@ var bonusInterCost = 10;
 var bonusPourCost = 10;
 var bonus3Cost = 10;
 var depense = 0;
+
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
 var autoclickOn = false;
 var bonusOn = false;
@@ -97,12 +98,13 @@ function displayClickValue() {
 } 
 //Fonction pour mettre a jour l'affichage du total
 function displayTotal() {
-  if (localStorage.score) {
-    localStorage.score = Number(localStorage.score)+1;
-  } else {
-  localStorage.score = score;
+  let totalScore = (score*multiplier*((pourVal/100)*10))
+if (localStorage.totalScore) {
+  localStorage.totalScore = Number(localStorage.totalScore)+(1*clickValue);
+} else {
+  localStorage.totalScore = totalScore;
 }
-  document.getElementById("pointtotal").innerText = ('Total : \n' +localStorage.score);
+  document.getElementById("pointtotal").innerText = ('Total : \n' +Math.floor(localStorage.totalScore));
 }
 //Fonction pour mettre a jour l'affichage des depense
 function displayDepense() {
