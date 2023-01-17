@@ -23,7 +23,7 @@ var autoclickCost = 20;
 var bonusCost = 10;
 var bonusInterCost = 100;
 var bonusPourCost = 100;
-var bonus3Cost = 10;
+var bonus3Cost = 100;
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
 var autoclickOn = false;
 var bonusOn = false;
@@ -51,6 +51,8 @@ function resetScore () {
   pourVal = 10;
   multiplierCost = 50
   bonusTime = 30;
+  bonusInterCost = 100;
+  bonusPourCost = 100;
   displayScore();
   displayMultiplier();
   displayAutoclick();
@@ -70,8 +72,6 @@ function resetScore () {
   knight.classList.add("lg:animate-none");
   knight.classList.remove("animate-sliding2");
   knight.classList.remove("lg:animate-sliding4");
-  orc.classList.add("animate-none");
-  orc.classList.add("lg:animate-none");
   orc.classList.remove("animate-sliding");
   orc.classList.remove("lg:animate-sliding3");
   orc.classList.add("animate-bounce");
@@ -111,7 +111,7 @@ function displayBonusPour() {
 }
 // Fonction pour mettre à jour l'affichage du bonus pourcentage
 function displayBonus3() {
-  pBonus3.innerText = '? (coût : '+ bonus3Cost +')';
+  pBonus3.innerText = '(coût : '+ bonus3Cost +')';
 }
 //Fonction pour mettre a jour l'affichage du ClickValue
 function displayClickValue() {
@@ -312,12 +312,18 @@ function buttonsEnabler() {
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Bonus3" est pressé
   function Bonus3() {
     let bonusMalus = (Math.floor(Math.random() * 10));
-    if(bonusMalus >= 5) {
-      score *= 5
-    } else if(bonusMalus < 5) {
-      score *= 0.5
-    }
     score -= bonus3Cost;
+    if(confirm("Êtes-vous sûr de vouloir boire la potion ?")) {
+      if(bonusMalus === 1) { score *= 5 }        
+      else if(bonusMalus > 1 && bonusMalus <= 3) { score *= 1.1 }        
+      else if(bonusMalus > 3 && bonusMalus <= 5) { score *= 1.3 }
+      else if(bonusMalus > 5 && bonusMalus <=7) {
+        if(score <= bonus3Cost) { score = 0 }
+        else score *= 0.5 }
+      else if(bonusMalus > 7 && bonusMalus <=9) { score = 0 }
+      else alert("Rien ne se passe...") }
+    else score += bonus3Cost
+
     bonus3.disabled = true;
     bonus3Cost *= 1;
     displayScore();
