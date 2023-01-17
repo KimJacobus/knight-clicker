@@ -46,42 +46,9 @@ var clickPour = clickValue*multiplier;
 
 // fonction reset
 function resetScore () {
-  console.log('reset')
-  score = 0+1;
-  clickValue = 1;
-  multiplier = 1;
-  pourVal = 10;
-  multiplierCost = 50
-  bonusTime = 30;
-  bonusInterCost = 100;
-  bonusPourCost = 100;
-  depense = 0;
-  localStorage.score = 0;
-  autoclickOn = false;
-  bonusOn = false;
-  displayScore();
-  displayMultiplier();
-  displayAutoclick();
-  displayBonus();
-  displayBonusInter();
-  displayBonusPour();
-  displayBonus3();
-  buttonsEnabler();
-  displayMulti();
-  displayTotal();
-  displayDepense();
-  skull.classList.add("hidden");
-  skullTwo.classList.add("hidden");
-  skullThree.classList.add("hidden");
-  skullFour.classList.add("hidden");
-  skullFive.classList.add("hidden");
-  knight.classList.add("animate-none");
-  knight.classList.add("lg:animate-none");
-  knight.classList.remove("animate-sliding2");
-  knight.classList.remove("lg:animate-sliding4");
-  orc.classList.remove("animate-sliding");
-  orc.classList.remove("lg:animate-sliding3");
-  orc.classList.add("animate-bounce");
+  location.reload();
+  localStorage.score = -1;
+
 }
 
 // Fonction pour mettre à jour l'affichage du score
