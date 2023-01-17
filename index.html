@@ -67,7 +67,7 @@
         </div>
         <!-- fin crânes -->
         <div class="lg:row-span-3 row-span-1">
-          <div class="grid grid-cols-3 pt-32 md:pb-20">
+          <div class="grid grid-cols-3 pt-32 lg:pb-20">
             <div class="row-span-1 self-end justify-self-center z-20">
               <img id="knight" class="object-scale-down h-10 w-10  md:h-20 md:w-20 " src="/pictures/8bitKnight.png" alt="" srcset="">
             </div>
@@ -84,13 +84,13 @@
           </button>
         </div>
 
-        <div class="trickster text-amber-100 text-lg grid grid-cols-5 justify-evenly text-center bg-contain" style="background-image: url(/pictures/woodenbg.jpg);">
-          <div id="pointtotal" class="">Total PO</div>
-          <div id="POdepense" class="">Dépense</div>
-          <div id="multiplicateur" class="">multiplicateur</div>          
-          <div id="pclick" class=""></div>
-          <div id="reset" class="">
-            <button id="resetbutton" value="click"  class="hover:scale-110">
+        <div class="trickster text-amber-100 text-lg grid grid-cols-5 justify-between text-center bg-contain" style="background-image: url(/pictures/woodenbg.jpg);">
+          <div id="pointtotal" class="self-end">Total PO</div>
+          <div id="POdepense" class="self-end">Dépense</div>
+          <div id="multiplicateur" class="self-end">multiplicateur</div>          
+          <div id="pclick" class="self-start">PO/s : <br> +0 </div>
+          <div id="reset" class="self-end">
+            <button id="resetbutton" value="reset" type="reset" class="hover:scale-110" data-bs-toggle="tooltip" title="Restart">
               <img class="" src="/pictures/reset.png" alt="" srcset="">
             </button>
           </div>
@@ -108,7 +108,7 @@
           </div>
         </div>
         <div class="row-span-1 justify-self-center self-center text-center">
-          <button id="bonus2" value="bonus" class="bg-transparent hover:scale-125 hover:animate-pulse shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Revenu instantané">
+          <button id="bonus2" value="bonus" class="bg-transparent hover:scale-125 hover:animate-pulse shadow" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Augmente le pourcentage de gain">
             <img src="/pictures/item.png" alt="" srcset=""> 
           </button>
           <div id="pbonus2" class="trickster text-xl text-amber-100 bg-transparent bg-bottom bg-repeat-x bg-contain px-2" style="background-image: url(/pictures/briques.png);">
