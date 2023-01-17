@@ -19,13 +19,16 @@
 
   <h3 class ="trickster text-center" >Knight-Clicker</h3>
 
-  <p align="center">
+  <p text-align="center">
      Exercise en équipe à Becode pour mieux comprendre du Javascript, Tailwind et la logique d'un Cookie-Clicker
   </p>
+
+    <a href="https://eradikalien.github.io/knight-clicker/">live-page</a>
+
 </div>
 
 
-### Built With
+## Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
