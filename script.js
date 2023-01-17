@@ -42,13 +42,12 @@ var clickValue = 1;
 var multiplier = 1;
 var bonusTime = 30;
 var pourVal = 10;
-var clickPour = clickValue*multiplier;
 var disPourVal = 10;
 
 // fonction reset
 function resetScore () {
   location.reload();
-  localStorage.score = 0-1;
+  localStorage.clear();
 
 }
 
