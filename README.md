@@ -32,6 +32,20 @@
 * <a href="https://github.com/KimJacobus">Kim</a>
 
 
+#### DevTeam
+
+* <a href="https://github.com/IronNetta">Sébastien</a>
+* <a href="https://github.com/EradikAlien">Laurent</a>
+* <a href="https://github.com/KimJacobus">Kim</a>
+
+
+#### Develop
+
+* git clone project
+* yarn install # or npm run install to install dependencies
+* yarn run start # or npm run start to start developing
+
+
 <!-- ACKNOWLEDGMENTS -->
 #### Acknowledgments
 
