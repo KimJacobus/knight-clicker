@@ -318,7 +318,7 @@ function buttonsEnabler() {
     
     let bonusMalus = (Math.floor(Math.random() * 10));
     console.log(bonusMalus)
-    score -= bonus3Cost;
+    
     depense += bonus3Cost;
       if(bonusMalus === 1) { scoreBonus3 = (score *= 5); displayNotif()}        
       else if(bonusMalus > 1 && bonusMalus <= 3) { scoreBonus3 = (score *= 1.5); displayNotif2()}        
@@ -328,7 +328,7 @@ function buttonsEnabler() {
         else if (score > bonus3Cost) { score *= 0.5; displayNotif5()}}
       else if(bonusMalus > 7 && bonusMalus <=9) { score = 0; displayNotif4()}
       else {displayNotif6(); score -= bonus3Cost }
-
+    score -= bonus3Cost;
     bonus3.disabled = true;
     bonus3Cost *= 3;
     displayScore();
