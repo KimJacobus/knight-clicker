@@ -321,13 +321,13 @@ function buttonsEnabler() {
     console.log(bonusMalus)
     
     depense += bonus3Cost;
-      if(bonusMalus === 1) { scoreBonus3 = (score *= 5); displayNotif()}        
+      if(bonusMalus === 1) { score += bonus3Cost; scoreBonus3 = (score *= 5); displayNotif()}        
       else if(bonusMalus > 1 && bonusMalus <= 3) { score += bonus3Cost; scoreBonus3 = (score *= 1.25); displayNotif2()}        
       else if(bonusMalus > 3 && bonusMalus <= 5) { score += bonus3Cost; scoreBonus3 = (score *= 1.15); displayNotif3()}
       else if(bonusMalus > 5 && bonusMalus <=7) {
-        if(score <= bonus3Cost) { score = 0; displayNotif4()}
-        else if (score > bonus3Cost) { score *= 0.5; displayNotif5()}}
-      else if(bonusMalus > 7 && bonusMalus <=9) { score = 0; displayNotif4()}
+        if(score <= bonus3Cost) { score += bonus3Cost; score = 0; displayNotif4()}
+        else if (score > bonus3Cost) { score += bonus3Cost; score *= 0.5; displayNotif5()}}
+      else if(bonusMalus > 7 && bonusMalus <=9) { score += bonus3Cost; score = 0; displayNotif4()}
       else {displayNotif6()}
     score -= bonus3Cost;
     bonus3.disabled = true;
