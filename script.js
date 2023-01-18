@@ -17,6 +17,7 @@ var pBonus1 = document.querySelector('#pbonus1');
 var multi = document.querySelector('#multiplicateur');
 var dep = document.querySelector('#POdepense');
 var reset = document.querySelector('#resetbutton');
+var notif = document.querySelector('#notif-template');
 
 // Coûts pour les différentes actions
 var multiplierCost = 30;
@@ -24,7 +25,7 @@ var autoclickCost = 50;
 var bonusCost = 100;
 var bonusInterCost = 200;
 var bonusPourCost = 100;
-var bonus3Cost = 100;
+var bonus3Cost = 300;
 var depense = 0;
 
 // Variables pour vérifier si les fonctionnalités de Autoclick et Bonus sont activées
@@ -54,9 +55,10 @@ function resetScore () {
 
 }
 
+
 // Fonction pour mettre à jour l'affichage du score
 function displayScore() {
-  display.innerText = Math.round(score);
+  display.innerText = score.toFixed(2);
 }
 
 // Fonction pour mettre à jour l'affichage du multiplicateur
@@ -114,7 +116,7 @@ function displayDepense() {
 }
 // Fonction pour activer ou désactiver le bouton "Multiplier" en fonction du score
 function multiplyEnabler() {
-  if (score >= multiplierCost) {
+  if (score >= multiplierCost && multiplier <= 16) {
     multiply.disabled = false;
     multiply.classList.remove("cursor-not-allowed","opacity-50");
     multiply.classList.add("hover:animate-ping");
@@ -311,25 +313,24 @@ function buttonsEnabler() {
     displayBonusPour();
     displayDepense();
   }
-
   // Fonction pour activer la fonctionnalité Bonus lorsque le bouton "Bonus3" est pressé
   function Bonus3() {
+    
     let bonusMalus = (Math.floor(Math.random() * 10));
     console.log(bonusMalus)
     score -= bonus3Cost;
     depense += bonus3Cost;
-    if(confirm("Êtes-vous sûr de vouloir boire la potion ?")) {
-      if(bonusMalus === 1) { scoreBonus3 = (score *= 5 + bonus3Cost) }        
-      else if(bonusMalus > 1 && bonusMalus <= 3) { scoreBonus3 = (score *= 1.1 + bonus3Cost) }        
-      else if(bonusMalus > 3 && bonusMalus <= 5) { scoreBonus3 = (score *= 1.3 + bonus3Cost) }
+      if(bonusMalus === 1) { scoreBonus3 = (score *= 5); displayNotif()}        
+      else if(bonusMalus > 1 && bonusMalus <= 3) { scoreBonus3 = (score *= 1.5); displayNotif2()}        
+      else if(bonusMalus > 3 && bonusMalus <= 5) { scoreBonus3 = (score *= 1.3); displayNotif3()}
       else if(bonusMalus > 5 && bonusMalus <=7) {
-        if(score <= bonus3Cost) { score = 0 }
-        else score *= 0.5 }
-      else if(bonusMalus > 7 && bonusMalus <=9) { score = 0 }
-      else alert("Rien ne se passe...") }
-    else score += bonus3Cost
+        if(score <= bonus3Cost) { score = 0; displayNotif4()}
+        else if (score > bonus3Cost) { score *= 0.5; displayNotif5()}}
+      else if(bonusMalus > 7 && bonusMalus <=9) { score = 0; displayNotif4()}
+      else {displayNotif6(); score -= bonus3Cost }
+
     bonus3.disabled = true;
-    bonus3Cost *= 1;
+    bonus3Cost *= 3;
     displayScore();
     buttonsEnabler();
     displayBonus3();
@@ -499,4 +500,47 @@ function CallSkullFive() {
 }
 }
 
+// Notification 
 
+function displayNotif() {
+  notif.innerText = 'Score x5 !'
+  setTimeout(()=> {
+    notif.classList.add("hidden");
+},3000);
+notif.classList.remove("hidden")
+}
+function displayNotif2() {
+  notif.innerText = 'Score +50% !'
+  setTimeout(()=> {
+    notif.classList.add("hidden");
+},3000);
+notif.classList.remove("hidden")
+}
+function displayNotif3() {
+  notif.innerText = 'Score +30% !'
+  setTimeout(()=> {
+    notif.classList.add("hidden");
+},3000);
+notif.classList.remove("hidden")
+}
+function displayNotif4() {
+  notif.innerText = 'Score à 0 !'
+  setTimeout(()=> {
+    notif.classList.add("hidden");
+},3000);
+notif.classList.remove("hidden")
+}
+function displayNotif5() {
+  notif.innerText = 'Score divisé par 2 !'
+  setTimeout(()=> {
+    notif.classList.add("hidden");
+},3000);
+notif.classList.remove("hidden")
+}
+function displayNotif6() {
+  notif.innerText = 'Rien ne se passe...'
+  setTimeout(()=> {
+    notif.classList.add("hidden");
+},3000);
+notif.classList.remove("hidden")
+}
