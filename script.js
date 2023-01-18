@@ -327,7 +327,7 @@ function buttonsEnabler() {
         if(score <= bonus3Cost) { score = 0; displayNotif4()}
         else if (score > bonus3Cost) { score *= 0.5; displayNotif5()}}
       else if(bonusMalus > 7 && bonusMalus <=9) { score = 0; displayNotif4()}
-      else {displayNotif6(); score -= bonus3Cost }
+      else {displayNotif6()}
     score -= bonus3Cost;
     bonus3.disabled = true;
     bonus3Cost *= 3;
