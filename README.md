@@ -8,7 +8,7 @@
   <h3 class ="text-center" >Knight-Clicker</h3>
 
   <p text-align="center">
-     Exercise en équipe à Becode pour mieux comprendre du Javascript, Tailwind et la logique d'un Cookie-Clicker      
+     Exercise à Becode pour mieux comprendre du Javascript, Tailwind et la logique d'un Cookie-Clicker      
   </p>
   <a text-align="center" href=https://eradikalien.github.io/knight-clicker/>LIVE-PAGE</a>
 
@@ -30,14 +30,6 @@
 * <a href="https://github.com/IronNetta">Sébastien</a>
 * <a href="https://github.com/EradikAlien">Laurent</a>
 * <a href="https://github.com/KimJacobus">Kim</a>
-
-
-#### DevTeam
-
-* <a href="https://github.com/IronNetta">Sébastien</a>
-* <a href="https://github.com/EradikAlien">Laurent</a>
-* <a href="https://github.com/KimJacobus">Kim</a>
-
 
 #### Develop
 
