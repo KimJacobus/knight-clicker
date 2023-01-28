@@ -25,11 +25,7 @@
 
 
 <!-- ROADMAP -->
-#### DevTeam
 
-* <a href="https://github.com/IronNetta">Sébastien</a>
-* <a href="https://github.com/EradikAlien">Laurent</a>
-* <a href="https://github.com/KimJacobus">Kim</a>
 
 #### Develop
 
